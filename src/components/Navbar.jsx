@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,105 +15,175 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '#features' },
+    { 
+      name: 'Products', 
+      href: '#products',
+      subItems: [
+        { name: 'Web Design', href: '#web-design' },
+        { name: 'Development', href: '#development' },
+        { name: 'Marketing', href: '#marketing' }
+      ]
+    },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  const toggleDropdown = (index) => {
+    setDropdownOpen(dropdownOpen === index ? null : index);
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed w-full z-50 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'} transition-all duration-300`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-              <span className="text-primaryfont-bold text-xl">S</span>
-            </div>
-            <span className="text-xl font-bold text-dark hidden sm:block">kilify</span>
-          </Link>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex-shrink-0 flex items-center"
+          >
+            <a href="/" className="flex items-center">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
+                L
+              </div>
+              <span className="ml-3 text-xl font-semibold text-gray-900">Logo</span>
+            </a>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/courses" className="text-dark hover:text-primary transition-colors font-medium">
-              Courses
-            </Link>
-            <Link to="/pricing" className="text-dark hover:text-primary transition-colors font-medium">
-              Pricing
-            </Link>
-            <Link to="/about" className="text-dark hover:text-primary transition-colors font-medium">
-              About
-            </Link>
-            <div className="flex space-x-4">
-              <Link to="/login" className="px-4 py-2 text-dark hover:text-primary transition-colors font-medium">
-                Login
-              </Link>
-              <Link 
-                to="/signup" 
-                className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:opacity-90 transition-opacity font-medium"
-              >
-                Sign Up
-              </Link>
-            </div>
+            {navItems.map((item, index) => (
+              <div key={index} className="relative">
+                {item.subItems ? (
+                  <div className="relative">
+                    <button 
+                      onClick={() => toggleDropdown(index)}
+                      className="flex items-center text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                    >
+                      {item.name}
+                      {dropdownOpen === index ? (
+                        <ChevronUp className="ml-1 h-4 w-4" />
+                      ) : (
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {dropdownOpen === index && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
+                        >
+                          {item.subItems.map((subItem, subIndex) => (
+                            <a
+                              key={subIndex}
+                              href={subItem.href}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                            >
+                              {subItem.name}
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-all"
+            >
+              Get Started
+            </motion.button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-dark focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
             >
               {isOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <X className="h-6 w-6" />
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
-          <div className="pt-4 pb-8 space-y-4">
-            <Link 
-              to="/courses" 
-              className="block px-4 py-2 text-dark hover:bg-primary rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Courses
-            </Link>
-            <Link 
-              to="/pricing" 
-              className="block px-4 py-2 text-dark hover:bg-primary rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Pricing
-            </Link>
-            <Link 
-              to="/about" 
-              className="block px-4 py-2 text-dark hover:bg-primary rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <div className="pt-4 space-y-3 border-t border-gray-100">
-              <Link 
-                to="/login" 
-                className="block px-4 py-2 text-dark hover:bg-primary rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Login
-              </Link>
-              <Link 
-                to="/signup" 
-                className="block px-4 py-2 text-center bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:opacity-90 transition-opacity"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign Up
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
-    </nav>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white shadow-lg overflow-hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navItems.map((item, index) => (
+                <div key={index}>
+                  <a
+                    href={item.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                  {item.subItems && (
+                    <div className="pl-4">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <a
+                          key={subIndex}
+                          href={subItem.href}
+                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <div className="px-3 py-4">
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium shadow-lg"
+                >
+                  Get Started
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

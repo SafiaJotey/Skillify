@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight } from "lucide-react";
-
+import banner from "../../assets/banner.png"
 const CourseBanner = () => {
   const controls = useAnimation();
   
@@ -50,24 +50,11 @@ const CourseBanner = () => {
     })
   };
 
-  // Enhanced module animation
-  const moduleAnimation = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: (i) => ({
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100
-      }
-    })
-  };
+
 
   return (
-    <div className="relative bg-gradient-to-br from-dark-800 to-dark-900 overflow-hidden min-h-[600px] flex items-center">
-      {/* Animated grid background with gradient */}
+    <div className="relative bg-dark-800 overflow-hidden min-h-[600px] py-36 flex items-center">
+      {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {[...Array(80)].map((_, i) => (
           <motion.div
@@ -94,13 +81,13 @@ const CourseBanner = () => {
         ))}
       </div>
 
-      {/* Floating particles with more variety */}
+      {/* Floating particles */}
       {[...Array(100)].map((_, i) => {
         const colors = [
+          "from-secondary-400 to-primary-500",
+          "from-secondary-500 to-secondary-600",
           "from-primary-400 to-secondary-500",
-          "from-purple-400 to-pink-500",
-          "from-blue-400 to-teal-400",
-          "from-yellow-400 to-orange-500"
+          "from-secondary-500 to-primary-400"
         ];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         
@@ -137,16 +124,16 @@ const CourseBanner = () => {
       {/* Main content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Enhanced content */}
-          <div>
+          {/* Left side */}
+          <div className="">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
             >
               <motion.div variants={floatingItem} custom={0} className="mb-6">
-                <span className="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-wider text-primary-200 uppercase bg-dark-700/50 rounded-full border border-primary-500/30">
-                  <Zap className="mr-2 w-4 h-4 fill-primary-500 text-primary-500" />
+                <span className="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-wider text-primary-100 uppercase bg-dark-700/50 rounded-full border border-primary-500/30">
+                  <Zap className="mr-2 w-4 h-4 fill-primary-400 text-primary-400" />
                   New Courses Available
                 </span>
               </motion.div>
@@ -156,7 +143,7 @@ const CourseBanner = () => {
                 custom={1}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
               >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-500 to-accent-pink animate-gradient">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500">
                   Master Skills
                 </span>{" "}
                 Like a Pro Developer
@@ -170,7 +157,7 @@ const CourseBanner = () => {
                 Build <span className="font-semibold text-primary-300">production-ready</span> applications with our interactive, project-based courses taught by industry experts.
               </motion.p>
 
-              {/* Enhanced stats */}
+              {/* Stats */}
               <motion.div 
                 variants={floatingItem} 
                 custom={3}
@@ -204,7 +191,7 @@ const CourseBanner = () => {
               </motion.div>
 
               <motion.div variants={floatingItem} custom={4} className="flex flex-wrap gap-4">
-                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-secondary-600 hover:from-primary-600 hover:to-secondary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
+                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
                   <span>Start Learning</span>
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
@@ -217,88 +204,50 @@ const CourseBanner = () => {
             </motion.div>
           </div>
 
-          {/* Right side - Enhanced 3D course visualization */}
+          {/* Right side */}
           <div className="relative hidden lg:block h-[500px]">
-            {/* Main course card with improved styling */}
-            <motion.div 
-              initial="hidden"
-              animate="visible"
-              className="absolute top-0 right-0 w-full h-full"
-            >
-              {/* Main course card */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20, rotateY: 10 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0,
-                    rotateY: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
-                }}
-                className="absolute top-12 right-16 w-80 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl shadow-2xl overflow-hidden border border-neutral-700 z-20"
-                whileHover={{ 
-                  y: -10,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className="h-44 bg-gradient-to-r from-secondary-500 to-accent-pink relative overflow-hidden">
-                  <motion.div
-                    animate={{
-                      rotate: 360,
-                      transition: { duration: 20, repeat: Infinity, ease: "linear" }
-                    }}
-                    className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-white/10"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Code size={48} className="text-white" />
-                  </div>
-                  <div className="absolute bottom-4 left-4 px-2 py-1 bg-black/30 rounded text-xs text-white backdrop-blur-sm">
-                    <span className="font-medium">PRO</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start">
-                    <h3 className="font-bold text-white text-lg">Advanced React Patterns</h3>
-                    <div className="flex items-center bg-dark-700 px-2 py-1 rounded text-xs">
-                      <Star className="mr-1 w-3 h-3 fill-yellow-400 text-yellow-400" /> 
-                      <span>4.9</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center mt-3 gap-4 text-xs text-neutral-400">
-                    <span className="flex items-center"><Users className="mr-1 w-3 h-3" /> 1.2k</span>
-                    <span className="flex items-center"><Clock className="mr-1 w-3 h-3" /> 18h</span>
-                  </div>
-                  <div className="mt-5">
-                    <div className="flex justify-between text-xs text-neutral-400 mb-1">
-                      <span>Progress</span>
-                      <span>65%</span>
-                    </div>
-                    <div className="w-full bg-neutral-700 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: "65%" }}
-                        transition={{ duration: 1, delay: 1 }}
-                        className="bg-gradient-to-r from-primary-400 to-secondary-500 h-2 rounded-full"
-                      />
-                    </div>
-                  </div>
-                  <motion.button 
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full mt-5 py-2.5 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-sm font-medium text-white transition-colors"
-                  >
-                    Continue Learning
-                  </motion.button>
-                </div>
-              </motion.div>
-
-              {/* Animated progress rings with improved design */}
-              <motion.div 
+  <motion.div 
+    initial="hidden"
+    animate="visible"
+    className="absolute top-0 right-0 w-full h-full"
+  >
+    {/* Main feature card */}
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20, rotateY: 10 },
+        visible: { 
+          opacity: 1, 
+          y: 0,
+          rotateY: 0,
+          transition: { duration: 0.8, ease: "easeOut" }
+        }
+      }}
+      className="absolute top-0 left-2 w-4/5 overflow-hidden z-20"
+      whileHover={{ 
+        y: -10,
+        transition: { duration: 0.3 }
+      }}
+    >
+      <motion.div
+        animate={{
+          y: [0, -10, 0],
+          transition: {
+            delay: 2,
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
+      >
+        <img src={banner} alt="Website Benefits" />
+      </motion.div>
+    </motion.div>
+   {/* Progress rings */}
+   <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
-                className="absolute top-36 right-96 w-44 h-44"
+                className="absolute top-40 -left-16 w-44 h-44"
               >
                 <svg className="w-full h-full" viewBox="0 0 100 100">
                   <motion.circle
@@ -333,133 +282,114 @@ const CourseBanner = () => {
                   <span className="text-neutral-400 text-xs mt-1">Course Completion</span>
                 </div>
               </motion.div>
+              
+    {/* Key Benefits Section - Consistent Card Styling */}
+    {[
+      { 
+        title: "Expert Knowledge", 
+        description: "content from industry experts",
+        icon: <BookOpen size={16} />
+      },
+      { 
+        title: "Save Time", 
+        description: " straight to the point ",
+        icon: <Clock size={16} />
+      },
+      { 
+        title: "Practical Skills", 
+        description: " real-world applications",
+        icon: <Code size={16} />
+      },
+      { 
+        title: "Community ", 
+        description: "like-minded learners",
+        icon: <Users size={16} />
+      },
+      { 
+        title: "Stay Updated", 
+        description: " latest  technologies",
+        icon: <Zap size={16} />
+      }
+    ].map((benefit, i) => (
+      <motion.div
+        key={i}
+        initial={{ 
+          x: i % 2 ? -200 : 200,
+          y: 0,
+          opacity: 0,
+          rotate: i % 2 ? -5 : 5
+        }}
+        animate={{ 
+          x: i === 0 || i === 4 ? 470 : i === 2 ? 560 : 520,
+          y: i * 100,
+          opacity: 1,
+          rotate: 0,
+          transition: {
+            delay: i * 0.3,
+            duration: 2,
+            ease: "backOut"
+          }
+        }}
+        whileHover={{
+          scale: 1.05,
+          y: i * 90 - 10,
+          zIndex: 30,
+          boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
+          transition: { duration: 0.3 }
+        }}
+        className={`absolute border-primary-500/30 bg-primary-500/10 backdrop-blur-sm border rounded-xl p-4 z-10`}
+        style={{
+          width: "200px",
+          height: "80px" // Consistent height for all cards
+        }}
+      >
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+            transition: {
+              delay: 2 + i * 0.2,
+              duration: 3 + i,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
+        >
+          <div className="flex items-start gap-3 h-full">
+            <motion.div 
+              className={`p-2 rounded-lg text-primary-400 bg-white/5`}
+              whileHover={{ scale: 1.1 }}
+            >
+              {benefit.icon}
+            </motion.div>
+            <div className="flex-1">
+              <h4 className="font-medium text-white text-sm">{benefit.title}</h4>
+              <p className="text-xs text-neutral-400">{benefit.description}</p>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    ))}
 
-              {/* Floating course modules with enhanced design */}
-              {[1, 2, 3, 4, 5, 6].map((i) => {
-  const moduleData = [
-    { title: "React Hooks", icon: <Code size={16} />, color: "primary" },
-    { title: "Context API", icon: <ShieldCheck size={16} />, color: "secondary" },
-    { title: "State Mgmt", icon: <Rocket size={16} />, color: "purple" },
-    { title: "Performance", icon: <Zap size={16} />, color: "yellow" },
-    { title: "Suspense", icon: <Clock size={16} />, color: "pink" },
-    { title: "Concurrent", icon: <BookOpen size={16} />, color: "teal" }
-  ];
-  
-  const currentModule = moduleData[i-1];
-  const colorClass = `text-${currentModule.color}-400`;
-  
-  return (
-    <motion.div
-      key={i}
-      initial={{ 
-        x: i % 2 ? -200 : 200,
-        y: i * 50,
-        opacity: 0,
-        rotate: i % 2 ? -5 : 5
-      }}
+    {/* Featured Badge */}
+    <motion.div 
+      className="absolute top-0 -left-16 bg-gradient-to-r from-primary-500 to-primary-700 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
       animate={{ 
-        x: i % 2 ? 0 : 700,
-        y: i * 50,
-        opacity: 1,
-        rotate: 0,
-        transition: {
-          delay: i * 0.3,
-          duration: 0.8,
-          ease: "backOut"
-        }
+        opacity: 1, 
+        y: 0,
+        transition: { delay: 3 }
       }}
       whileHover={{
         scale: 1.05,
-        y: i * 50 - 10,
-        zIndex: 30,
-        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
-        transition: { duration: 0.3 }
-      }}
-      className={`absolute border-${currentModule.color}-500/30 bg-${currentModule.color}-500/10 z-10 backdrop-blur-sm border rounded-xl p-4 shadow-lg`}
-      style={{
-        width: `${170 + i * 10}px`,
+        rotate: [0, -5, 5, 0],
+        transition: { duration: 0.5 }
       }}
     >
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-          transition: {
-            delay: 2 + i * 0.2,
-            duration: 3 + i,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-      >
-        <div className="flex items-center gap-3">
-          <motion.div 
-            className={`p-2 rounded-lg ${colorClass} bg-white/5`}
-            whileHover={{ scale: 1.1 }}
-          >
-            {currentModule.icon}
-          </motion.div>
-          <div className="flex-1">
-            <h4 className="font-medium text-white text-sm">Module {i}</h4>
-            <p className="text-xs text-neutral-400">{currentModule.title}</p>
-          </div>
-          <ChevronRight className="w-4 h-4 text-neutral-500" />
-        </div>
-      </motion.div>
+      Trusted by Thousands 
     </motion.div>
-  );
-})}
-
-              {/* Connection lines with glow */}
-              {[1, 3, 5].map((i) => (
-                <motion.svg
-                  key={`line-${i}`}
-                  className="absolute z-0"
-                  style={{
-                    top: `${i * 50 + 20}px`,
-                    left: i % 2 ? `${120 + i * 30 - 20}px` : '700px',
-                    width: i % 2 ? `calc(50% - ${120 + i * 30}px)` : `calc(50% - 700px)`,
-                    height: '2px'
-                  }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.3 }}
-                  transition={{ delay: 2.5 }}
-                >
-                  <motion.line
-                    x1="0"
-                    y1="0"
-                    x2="100%"
-                    y2="0"
-                    stroke={i % 2 ? "#3b82f6" : "#a855f7"}
-                    strokeWidth="1"
-                    strokeDasharray="5,5"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1, delay: 2 + i * 0.1 }}
-                  />
-                </motion.svg>
-              ))}
-
-         
-
-              {/* Floating badges */}
-              <motion.div 
-                className="absolute top-10 left-20 bg-gradient-to-r from-primary-500 to-secondary-600 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 3 }
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.5 }
-                }}
-              >
-                Most Popular Course 🔥
-              </motion.div>
-            </motion.div>
-          </div>
+  </motion.div>
+ 
+</div>
         </div>
       </div>
     </div>
