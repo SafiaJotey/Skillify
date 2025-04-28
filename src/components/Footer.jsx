@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-secondary-500/10 blur-[100px]"></div>
       
       {/* Floating particles */}
-      {[...Array(30)].map((_, i) => {
+      {[...Array(100)].map((_, i) => {
         const colors = [
           "from-secondary-400 to-primary-500",
           "from-secondary-500 to-secondary-600",

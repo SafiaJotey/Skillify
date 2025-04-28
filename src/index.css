@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-bg text-dark;
+
+.box{
+  @apply max-w-[1600px] mx-auto;
 }
