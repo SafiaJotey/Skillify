@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy } from "lucide-react";
-import banner from "../../assets/banner.png"
+import banner from "../../assets/banner_high_res.png"
 const CourseBanner = () => {
   const controls = useAnimation();
   
@@ -60,10 +60,10 @@ const CourseBanner = () => {
    {/* Floating particles */}
    {[...Array(100)].map((_, i) => {
      const colors = [
-       "from-secondary-400 to-primary-500",
-       "from-secondary-500 to-secondary-600",
-       "from-primary-400 to-secondary-500",
-       "from-secondary-500 to-primary-400"
+       "from-primary-400 to-primary-500",
+       "from-primary-500 to-primary-600",
+       "from-primary-400 to-primary-500",
+       "from-primary-500 to-primary-400"
      ];
      const randomColor = colors[Math.floor(Math.random() * colors.length)];
      
@@ -95,7 +95,7 @@ const CourseBanner = () => {
 
    {/* Glow effects */}
    <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-primary-500/10 blur-[100px]"></div>
-   <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-secondary-500/10 blur-[100px]"></div>
+   <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-primary-500/10 blur-[100px]"></div>
 
    {/* Main content */}
    <div className="container mx-auto px-6 relative z-10">
@@ -198,7 +198,7 @@ const CourseBanner = () => {
        transition: { duration: 0.8, ease: "easeOut" }
      }
    }}
-   className="absolute top-0 left-2 w-4/5 overflow-hidden z-20"
+   className="absolute -top-10 left-2 w-4/5 overflow-hidden z-20"
    whileHover={{ 
      y: -10,
      transition: { duration: 0.3 }
@@ -215,93 +215,93 @@ const CourseBanner = () => {
        }
      }}
    >
-     <img src={banner} alt="Website Benefits" />
+     <img src={banner} alt="Website Benefits" className="w-full"/>
    </motion.div>
  </motion.div>
 {/* Progress rings */}
 <motion.div 
-initial={{ scale: 0, opacity: 0 }}
-animate={{ scale: 1, opacity: 1 }}
-transition={{ delay: 1.5, duration: 0.8 }}
-className="absolute top-40 -left-16 w-44 h-44"
-whileHover="hover"
+  initial={{ scale: 0, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 1.5, duration: 0.8 }}
+  className="absolute top-40 -left-16 w-44 h-44"
+  whileHover="hover"
 >
-<svg className="w-full h-full" viewBox="0 0 100 100">
- <motion.circle
-   cx="50"
-   cy="50"
-   r="45"
-   fill="none"
-   stroke="#334155"
-   strokeWidth="8"
- />
- <motion.circle
-   cx="50"
-   cy="50"
-   r="45"
-   fill="none"
-   stroke="url(#progressGradient)"
-   strokeWidth="8"
-   strokeLinecap="round"
-   initial={{ strokeDashoffset: 283, strokeDasharray: 283 }}
-   animate={{ strokeDashoffset: 80 }}
-   transition={{ duration: 2, delay: 1.8 }}
-   variants={{
-     hover: {
-       strokeDashoffset: 0,
-       transition: { duration: 0.5 }
-     }
-   }}
- />
- <defs>
-   <motion.linearGradient 
-     id="progressGradient" 
-     x1="0%" 
-     y1="0%" 
-     x2="100%" 
-     y2="0%"
-     variants={{
-       hover: {
-         x1: [ "0%", "100%", "0%" ],
-         x2: [ "100%", "0%", "100%" ],
-         transition: {
-           duration: 3,
-           repeat: Infinity,
-           ease: "linear"
-         }
-       }
-     }}
-   >
-     <stop offset="0%" stopColor="#22d3ee" />
-     <stop offset="100%" stopColor="#a855f7" />
-   </motion.linearGradient>
- </defs>
-</svg>
-<div className="absolute inset-0 flex items-center justify-center flex-col">
- <motion.div
-   animate={{
-     y: [0, -5, 0],
-     transition: {
-       delay: 2,
-       duration: 3,
-       repeat: Infinity,
-       ease: "easeInOut"
-     }
-   }}
-   variants={{
-     hover: {
-       scale: 1.1,
-       transition: { duration: 0.3 }
-     }
-   }}
- >
-   <Trophy className="w-8 h-8 text-primary-500 hover:text-primary-600 mb-4" />
- </motion.div>
+  <svg className="w-full h-full" viewBox="0 0 100 100">
+    <motion.circle
+      cx="50"
+      cy="50"
+      r="45"
+      fill="none"
+      stroke="#334155"
+      strokeWidth="8"
+    />
+    <motion.circle
+      cx="50"
+      cy="50"
+      r="45"
+      fill="none"
+      stroke="url(#progressGradient)"
+      strokeWidth="8"
+      strokeLinecap="round"
+      initial={{ strokeDashoffset: 283, strokeDasharray: 283 }}
+      animate={{ strokeDashoffset: 80 }}
+      transition={{ duration: 2, delay: 1.8 }}
+      variants={{
+        hover: {
+          strokeDashoffset: 0,
+          transition: { duration: 0.5 }
+        }
+      }}
+    />
+    <defs>
+      <motion.linearGradient 
+        id="progressGradient" 
+        x1="0%" 
+        y1="0%" 
+        x2="100%" 
+        y2="0%"
+        variants={{
+          hover: {
+            x1: ["0%", "100%", "0%"],
+            x2: ["100%", "0%", "100%"],
+            transition: {
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear"
+            }
+          }
+        }}
+      >
+        <stop offset="0%" stopColor="#06b6d4" /> {/* primary-500 - DEFAULT */}
+        <stop offset="50%" stopColor="#22d3ee" /> {/* primary-400 */}
+        <stop offset="100%" stopColor="#67e8f9" /> {/* primary-300 */}
+      </motion.linearGradient>
+    </defs>
+  </svg>
+  <div className="absolute inset-0 flex items-center justify-center flex-col">
+    <motion.div
+      animate={{
+        y: [0, -5, 0],
+        transition: {
+          delay: 2,
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }
+      }}
+      variants={{
+        hover: {
+          scale: 1.1,
+          transition: { duration: 0.3 }
+        }
+      }}
+    >
+      <Trophy className="w-8 h-8 text-primary-500 hover:text-primary-400 mb-4" />
+    </motion.div>
 
-   <span className="text-neutral-400 text-xs">Certificate On</span>
-   <span className="text-neutral-400 text-xs mt-1 block">Course Completion</span>
-
-</div>
+    <span className="text-neutral-400 text-xs">Certificate On</span>
+    <span className="text-neutral-400 text-xs mt-1 block">Course Completion</span>
+  </div>
 </motion.div>
         
  {/* Key Benefits Section - Consistent Card Styling */}

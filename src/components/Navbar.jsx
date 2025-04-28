@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import logo from "../assets/logo.png"
+import logo from "../assets/fullLogo.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 ${scrolled ? 'bg-dark-800/25 backdrop-blur-md shadow-sm' : 'bg-transparent'} transition-all duration-300`}
+      className={`fixed w-full z-50 ${scrolled ? 'bg-dark-800/10 backdrop-blur-md shadow-sm' : 'bg-transparent'} transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
@@ -115,7 +115,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-900 text-white font-medium shadow-lg hover:shadow-xl transition-all"
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-primary-900 text-white font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Get Started
             </motion.button>
@@ -174,7 +174,7 @@ const Navbar = () => {
               <div className="px-3 py-4">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  className="w-full px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium shadow-lg"
+                  className="w-full px-6 py-2 rounded-full bg-gradient-to-r  from-primary-600 to-secondary-900 text-white font-medium shadow-lg"
                 >
                   Get Started
                 </motion.button>
