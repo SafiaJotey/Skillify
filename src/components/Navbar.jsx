@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-
+import logo from "../assets/logo.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'} transition-all duration-300`}
+      className={`fixed w-full z-50 ${scrolled ? 'bg-dark-800/25 backdrop-blur-md shadow-sm' : 'bg-transparent'} transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
@@ -50,10 +50,10 @@ const Navbar = () => {
             className="flex-shrink-0 flex items-center"
           >
             <a href="/" className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
-                L
+              <div className='w-[150px]'>
+                <img src={logo} alt="" />
               </div>
-              <span className="ml-3 text-xl font-semibold text-gray-900">Logo</span>
+           
             </a>
           </motion.div>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                   <div className="relative">
                     <button 
                       onClick={() => toggleDropdown(index)}
-                      className="flex items-center text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                      className="flex items-center text-neutral-400 hover:text-primary-600 transition-colors font-medium"
                     >
                       {item.name}
                       {dropdownOpen === index ? (
@@ -82,13 +82,13 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
+                          className="absolute left-0 mt-2 w-48 rounded-md bg-dark-800/25 backdrop-blur-md shadow-lg ring-1 ring-black ring-opacity-5 py-1 z-50"
                         >
                           {item.subItems.map((subItem, subIndex) => (
                             <a
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                              className="block px-4 py-2 text-sm  text-neutral-300 hover:text-primary-600 hover:bg-neutral-700 transition-colors"
                             >
                               {subItem.name}
                             </a>
@@ -100,10 +100,10 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={item.href}
-                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group"
+                    className=" text-neutral-400 hover:text-primary-600 transition-colors font-medium relative group"
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5text-primary-600 transition-all group-hover:w-full"></span>
                   </a>
                 )}
               </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-all"
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-900 text-white font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Get Started
             </motion.button>
@@ -145,14 +145,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg overflow-hidden"
+            className="md:hidden bg-dark-700 shadow-lg overflow-hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item, index) => (
                 <div key={index}>
                   <a
                     href={item.href}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-neutral-300 hover:text-primary-600 hover:bg-neutral-700"
                   >
                     {item.name}
                   </a>
@@ -162,7 +162,7 @@ const Navbar = () => {
                         <a
                           key={subIndex}
                           href={subItem.href}
-                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                          className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-400 hover:text-primary-600 hover:bg-neutral-700"
                         >
                           {subItem.name}
                         </a>
