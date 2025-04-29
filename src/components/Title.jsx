@@ -26,17 +26,17 @@ export default function Title({ heading, subHeading, dark = false }) {
   };
 
   // Professional underline with dots animation
-  const underlineAnimation = {
-    hidden: { scaleX: 0, opacity: 0 },
-    show: {
-      scaleX: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
+  // const underlineAnimation = {
+  //   hidden: { scaleX: 0, opacity: 0 },
+  //   show: {
+  //     scaleX: 1,
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0.8,
+  //       ease: [0.22, 1, 0.36, 1]
+  //     }
+  //   }
+  // };
 
 
 

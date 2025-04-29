@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp } from "lucide-react";
+import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp, FileText, Video, Target, BarChart2, Clock1, CheckCircle } from "lucide-react";
 import banner from "../../assets/banner_high_res.png"
 import samsung_logo from "../../assets/samsung_logo.svg"
 import cisco_logo from "../../assets/cisco_logo.svg"
@@ -13,10 +13,57 @@ import volkswagen_logo from "../../assets/volkswagen_logo.svg"
 import FAQ from "../../components/Faq";
 import Title from "../../components/Title";
 import { useRef, useState } from 'react';
+import ReviewSection from "../../components/Reviews";
 
 const CourseBanner = () => {
   const controls = useAnimation();
-  
+const [currentSlide, setCurrentSlide] = useState(0);
+const sliderContainerRef = useRef(null);
+const totalSlides = 3;
+
+
+const tabVariants = {
+  active: {
+    color: '#111827',
+    borderBottomWidth: '2px',
+    borderColor: '#06b6d4'
+  },
+  inactive: {
+    color: '#64748b',
+    borderBottomWidth: '0px'
+  }
+};
+
+const cardVariants = {
+  hover: {
+    y: -5,
+    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)'
+  }
+};
+
+const goToSlide = (index) => {
+  setCurrentSlide(index);
+  if (sliderContainerRef.current) {
+    sliderContainerRef.current.style.transform = `translateX(-${index * 100}%)`;
+  }
+};
+
+const goToNextSlide = () => {
+  const nextSlide = (currentSlide + 1) % totalSlides;
+  goToSlide(nextSlide);
+};
+
+const goToPrevSlide = () => {
+  const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  goToSlide(prevSlide);
+};
+
+// Auto-advance slides (optional)
+useEffect(() => {
+  const interval = setInterval(goToNextSlide, 5000);
+  return () => clearInterval(interval);
+}, [currentSlide]);
+
   useEffect(() => {
     const sequence = async () => {
       await controls.start("visible");
@@ -74,7 +121,30 @@ const CourseBanner = () => {
       }
     }
   };
-
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+  
+  
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { 
@@ -91,148 +161,113 @@ const CourseBanner = () => {
       transition: { duration: 0.2 }
     }
   };
-  const courses = {
-    all: [
-      {
-        id: 1,
-        title: 'React Masterclass',
-        instructor: 'Jane Smith',
-        rating: 4.9,
-        students: 12500,
-        price: 89.99,
-        category: 'web',
-        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhY3QlMjBqc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-      },
-      {
-        id: 2,
-        title: 'Python for Data Science',
-        instructor: 'John Doe',
-        rating: 4.7,
-        students: 18700,
-        price: 99.99,
-        category: 'data',
-        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHl0aG9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-      },
-      {
-        id: 3,
-        title: 'UI/UX Design Fundamentals',
-        instructor: 'Alex Johnson',
-        rating: 4.8,
-        students: 9200,
-        price: 79.99,
-        category: 'design',
-        image: 'https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWklMjB1aXh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-      },
-      {
-        id: 4,
-        title: 'Advanced JavaScript Patterns',
-        instructor: 'Sarah Williams',
-        rating: 4.9,
-        students: 15300,
-        price: 94.99,
-        category: 'web',
-        image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8amF2YXNjcmlwdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-      }
-    ],
-    web: [
-      {
-        id: 1,
-        title: 'React Masterclass',
-        instructor: 'Jane Smith',
-        rating: 4.9,
-        students: 12500,
-        price: 89.99,
-        category: 'web',
-        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhY3QlMjBqc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-      },
-      {
-        id: 4,
-        title: 'Advanced JavaScript Patterns',
-        instructor: 'Sarah Williams',
-        rating: 4.9,
-        students: 15300,
-        price: 94.99,
-        category: 'web',
-        image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8amF2YXNjcmlwdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
-      }
-    ],
-    data: [
-      {
-        id: 2,
-        title: 'Python for Data Science',
-        instructor: 'John Doe',
-        rating: 4.7,
-        students: 18700,
-        price: 99.99,
-        category: 'data',
-        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHl0aG9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-      }
-    ],
-    design: [
-      {
-        id: 3,
-        title: 'UI/UX Design Fundamentals',
-        instructor: 'Alex Johnson',
-        rating: 4.8,
-        students: 9200,
-        price: 79.99,
-        category: 'design',
-        image: 'https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWklMjB1aXh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-      }
-    ]
-  };
-
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderContainerRef = useRef(null);
-  const animationObserverRef = useRef(null);
-  const [activeTab, setActiveTab] = useState('all');
-  // Slider navigation
-  const goToPrevSlide = () => {
-    setCurrentSlide(prev => (prev > 0 ? prev - 1 : 1)); // Assuming 2 slides (0 and 1)
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide(prev => (prev < 1 ? prev + 1 : 0)); // Assuming 2 slides (0 and 1)
-  };
-
-  // Update slider position when currentSlide changes
-  useEffect(() => {
-    if (sliderContainerRef.current) {
-      const offset = -currentSlide * 100;
-      sliderContainerRef.current.style.transform = `translateX(${offset}%)`;
-      sliderContainerRef.current.style.transition = 'transform 0.5s ease-in-out';
+ 
+const courses = {
+  all: [
+    {
+      id: 1,
+      title: "Advanced React Patterns",
+      description: "Master modern React architecture and advanced component patterns used by top companies.",
+      category: "development",
+      duration: "8h 30m",
+      lessons: 42,
+      level: "Advanced",
+      icon: <BookOpen className="w-5 h-5 text-primary-500" />
+    },
+    {
+      id: 2,
+      title: "UI/UX Design Fundamentals",
+      description: "Learn the core principles of user interface and experience design from industry experts.",
+      category: "design",
+      duration: "6h 15m",
+      lessons: 35,
+      level: "Beginner",
+      icon: <FileText className="w-5 h-5 text-secondary-500" />
+    },
+    {
+      id: 3,
+      title: "Node.js Microservices",
+      description: "Build scalable microservices architecture with Node.js and Docker.",
+      category: "development",
+      duration: "10h",
+      lessons: 58,
+      level: "Intermediate",
+      icon: <BookOpen className="w-5 h-5 text-primary-500" />
     }
-  }, [currentSlide]);
+  ],
+  development: [
+    {
+      id: 1,
+      title: "Advanced React Patterns",
+      description: "Master modern React architecture and advanced component patterns used by top companies.",
+      duration: "8h 30m",
+      lessons: 42,
+      level: "Advanced",
+      icon: <BookOpen className="w-5 h-5 text-primary-500" />
+    },
+    {
+      id: 3,
+      title: "Node.js Microservices",
+      description: "Build scalable microservices architecture with Node.js and Docker.",
+      duration: "10h",
+      lessons: 58,
+      level: "Intermediate",
+      icon: <BookOpen className="w-5 h-5 text-primary-500" />
+    }
+  ],
+  design: [
+    {
+      id: 2,
+      title: "UI/UX Design Fundamentals",
+      description: "Learn the core principles of user interface and experience design from industry experts.",
+      duration: "6h 15m",
+      lessons: 35,
+      level: "Beginner",
+      icon: <FileText className="w-5 h-5 text-secondary-500" />
+    }
+  ]
+};
 
-  // Intersection Observer for scroll animations
-  useEffect(() => {
-    const handleIntersection = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const element = entry.target;
-          const animationClass = element.classList.contains('animate-fade-in-up') 
-            ? 'animate-fade-in-up' 
-            : 'animate-fade-in';
-          element.classList.add(animationClass);
-        }
-      });
-    };
+  const [activeTab, setActiveTab] = useState('all');
+  
+  const goals = [
+    {
+      icon: <Target className="w-6 h-6 text-primary-500" />,
+      title: "Goal-Oriented Learning",
+      description: "Customize your learning path to match your career objectives and personal growth targets.",
+      features: [
+        "Personalized course recommendations",
+        "Skill-based learning tracks",
+        "Progress milestones"
+      ]
+    },
+    {
+      icon: <BarChart2 className="w-6 h-6 text-secondary-500" />,
+      title: "Skill Measurement",
+      description: "Track your proficiency growth with our assessment system and visual progress indicators.",
+      features: [
+        "Pre- and post-course assessments",
+        "Skill level analytics",
+        "Gap identification"
+      ]
+    },
+    {
+      icon: <Clock1 className="w-6 h-6 text-accent-purple" />,
+      title: "Flexible Pace",
+      description: "Learn at your own speed with on-demand content that fits your schedule.",
+      features: [
+        "Self-paced courses",
+        "Mobile-friendly content",
+        "Lifetime access"
+      ]
+    }
+  ];
 
-    animationObserverRef.current = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    });
-
-    const elements = document.querySelectorAll('.opacity-0');
-    elements.forEach(el => animationObserverRef.current.observe(el));
-
-    return () => {
-      if (animationObserverRef.current) {
-        animationObserverRef.current.disconnect();
-      }
-    };
-  }, []);
+  const stats = [
+    { value: "87%", label: "Career advancement", icon: <Award className="w-5 h-5" /> },
+    { value: "12M+", label: "Learning minutes", icon: <Clock className="w-5 h-5" /> },
+    { value: "94%", label: "Completion rate", icon: <CheckCircle className="w-5 h-5" /> }
+  ];
 
   return (
    <> 
@@ -605,7 +640,7 @@ const CourseBanner = () => {
    </div>
  </div>
  <motion.div 
-      className="text-center w-full px-4 md:px-36 py-16"
+      className="text-center w-full px-4 md:px-36 py-16 bg-neutral-100"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
@@ -649,144 +684,236 @@ const CourseBanner = () => {
 
 
 
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-12 text-gray-900"
-        >
-          Explore Our Courses
-        </motion.h2>
-        
-        {/* Tabs */}
-        <motion.div 
-          className="flex justify-center mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="flex space-x-1 bg-white p-1 rounded-full shadow-md border border-gray-200">
-            {[
-              { id: 'all', label: 'All Courses' },
-              { id: 'web', label: 'Web Development' },
-              { id: 'data', label: 'Data Science' },
-              { id: 'design', label: 'UI/UX Design' }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-2 text-sm font-medium rounded-full transition-colors ${
-                  activeTab === tab.id
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                }`}
+    <section className="py-16 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-dark-800 mb-4"
+          >
+            Explore Our Courses
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-lg text-neutral-500 max-w-2xl mx-auto"
+          >
+            Learn in-demand skills with our comprehensive curriculum designed by industry professionals.
+          </motion.p>
+        </div>
+
+        <div className="mb-10">
+          <div className="flex justify-center gap-2 md:gap-6 border-b border-neutral-200">
+            {['all', 'development', 'design'].map((tab) => (
+              <motion.button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                initial={false}
+                animate={activeTab === tab ? 'active' : 'inactive'}
+                variants={tabVariants}
+                className="px-4 py-3 text-sm md:text-base font-medium capitalize transition-colors"
               >
-                {tab.label}
-              </button>
+                {tab === 'all' ? 'All Courses' : tab}
+                {activeTab === tab && (
+                  <motion.div 
+                    layoutId="tabIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500"
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </motion.button>
             ))}
           </div>
-        </motion.div>
-        
-        {/* Course Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <AnimatePresence mode="wait">
-            {courses[activeTab].map((course) => (
-              <motion.div
-                key={course.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <motion.img
-                    src={course.image}
-                    alt={course.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">
-                    {course.category === 'web' && 'Web Dev'}
-                    {course.category === 'data' && 'Data'}
-                    {course.category === 'design' && 'Design'}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courses[activeTab].map((course) => (
+            <motion.div
+              key={course.id}
+              whileHover="hover"
+              variants={cardVariants}
+              className="bg-white rounded-xl border border-neutral-200 overflow-hidden transition-all"
+            >
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-primary-50">
+                    {course.icon}
                   </div>
+                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-neutral-100 text-neutral-600">
+                    {course.level}
+                  </span>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{course.title}</h3>
-                  <p className="text-gray-600 mb-4">By {course.instructor}</p>
-                  
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className={`w-5 h-5 ${i < Math.floor(course.rating) ? 'fill-current' : 'fill-gray-300'}`}
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="text-gray-600 ml-2">
-                      {course.rating} ({course.students.toLocaleString()})
-                    </span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-gray-900">${course.price}</span>
-                    <motion.button
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Enroll Now
-                    </motion.button>
-                  </div>
+                <h3 className="text-xl font-bold text-dark-800 mb-2">{course.title}</h3>
+                <p className="text-neutral-500 mb-4">{course.description}</p>
+                
+                <div className="flex flex-wrap gap-4 text-sm text-neutral-500 mb-6">
+                  <span className="flex items-center gap-1">
+                    <Video className="w-4 h-4" />
+                    {course.lessons} lessons
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Award className="w-4 h-4" />
+                    {course.duration}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+                
+                <button className="w-full flex items-center justify-between group">
+                  <span className="font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
+                    View Course
+                  </span>
+                  <ChevronRight className="w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        
-        {/* View All Button */}
-        <motion.div 
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
           className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-600 border border-blue-600 rounded-full font-medium hover:bg-blue-50 transition-colors"
-          >
-            View All Courses
-          </motion.button>
+          <button className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg">
+            Browse All Courses
+          </button>
         </motion.div>
       </div>
     </section>
 
+    <section className="py-16 px-4 bg-neutral-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-dark-800 mb-4"
+          >
+            Learning Focused on <span className="text-primary-600">Your Goals</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-lg text-neutral-500 max-w-3xl mx-auto"
+          >
+            Our platform adapts to your learning style and career aspirations with personalized recommendations and progress tracking.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {goals.map((goal, index) => (
+            <motion.div
+              key={goal.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+              className="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-all"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 rounded-lg bg-primary-50">
+                  {goal.icon}
+                </div>
+                <h3 className="text-xl font-bold text-dark-800">{goal.title}</h3>
+              </div>
+              <p className="text-neutral-500 mb-6">{goal.description}</p>
+              <ul className="space-y-3">
+                {goal.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-neutral-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 md:p-12 text-white"
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/2">
+                <BookOpen className="w-12 h-12 mb-6 text-white/80" />
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Start learning with purpose today</h3>
+                <p className="text-white/90 mb-6">
+                  Join thousands of learners who've transformed their careers through our goal-driven approach to education.
+                </p>
+                <button className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-neutral-100 transition-colors">
+                  Explore Learning Paths
+                </button>
+              </div>
+              <div className="md:w-1/2 grid grid-cols-2 gap-6">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                    viewport={{ once: true }}
+                    className="bg-white/10 p-4 rounded-lg backdrop-blur-sm"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      {stat.icon}
+                      <span className="text-lg font-bold">{stat.value}</span>
+                    </div>
+                    <p className="text-sm text-white/80">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+<ReviewSection/>
 
 
-
-
-
-
-
- 
     <div className="bg-neutral-100 py-16 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h3 className="text-4xl text-primary font-bold mb-8 opacity-0">Trending Now</h3>
-        <hr className="mb-8 border-t-2 border-neutral-200 opacity-0" />
+        <motion.h3 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl text-primary font-bold mb-8"
+        >
+          Trending Now
+        </motion.h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.hr 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 border-t-2 border-neutral-200"
+        />
+        
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {/* Column 1 */}
-          <div className="opacity-0 animate-fade-in-up">
+          <motion.div variants={itemVariants}>
             <h3 className="text-4xl">React is a top skill</h3>
             <div className="my-8">
               <a href="#" className="text-lg text-primary font-semibold inline-block hover:underline hover:translate-x-1 transition-transform duration-300">
@@ -797,10 +924,10 @@ const CourseBanner = () => {
             <button className="group flex items-center px-4 py-2 bg-transparent border-2 border-primary-500 hover:border-primary-600 font-semibold text-primary transition-all duration-300 my-8 hover:bg-primary-50 rounded-md">
               Show All Trending courses <TrendingUp className="text-primary-400 mx-2 group-hover:translate-x-1 transition-transform duration-300"/>
             </button>
-          </div>
+          </motion.div>
           
           {/* Column 2 */}
-          <div className="opacity-0 animate-fade-in-up animation-delay-100">
+          <motion.div variants={itemVariants}>
             <h3 className="text-3xl">Programming</h3>
             <div>
               <div className="hover:bg-neutral-50 p-2 rounded transition-all duration-300">
@@ -816,10 +943,10 @@ const CourseBanner = () => {
                 <p className="text-neutral-500">4,415,930 learners</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* Column 3 */}
-          <div className="opacity-0 animate-fade-in-up animation-delay-200">
+          <motion.div variants={itemVariants}>
             <h3 className="text-3xl">Programming</h3>
             <div>
               <div className="hover:bg-neutral-50 p-2 rounded transition-all duration-300">
@@ -835,10 +962,10 @@ const CourseBanner = () => {
                 <p className="text-neutral-500">4,415,930 learners</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* Column 4 */}
-          <div className="opacity-0 animate-fade-in-up animation-delay-300">
+          <motion.div variants={itemVariants}>
             <h3 className="text-3xl">Programming</h3>
             <div>
               <div className="hover:bg-neutral-50 p-2 rounded transition-all duration-300">
@@ -854,14 +981,15 @@ const CourseBanner = () => {
                 <p className="text-neutral-500">4,415,930 learners</p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Slider Section */}
-        <div className="py-16 relative">
+      
+      {/* Slider Section */}
+      <div className="py-16 relative  overflow-hidden">
           <div 
             ref={sliderContainerRef}
-            className="slider-container flex overflow-hidden w-full transition-transform duration-500 ease-in-out"
+            className="slider-container flex w-full transition-transform duration-500 ease-in-out"
           >
             {/* Slide 1 */}
             <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -900,22 +1028,22 @@ const CourseBanner = () => {
             </div>
             
             {/* Slide 2 */}
-            <div className="slider-slide bg-red-200 min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="pr-8">
-                <span className="text-2xl border-r pr-4 border-neutral-500">Another</span>
-                <span className="text-2xl border-r pr-4 border-neutral-500">Example</span>
-                <span className="text-2xl">Slide</span>
-                <h3 className="text-3xl font-semibold py-8">Different content for the second slide in the slider</h3>
+                <span className="text-2xl border-r pr-4 border-neutral-500">Tech</span>
+                <span className="text-2xl border-r pr-4 border-neutral-500">Company</span>
+                <span className="text-2xl">Inc</span>
+                <h3 className="text-3xl font-semibold py-8">Tech Company Improves Employee Skills with Online Learning Platform</h3>
                 
                 <div className="my-8 grid grid-cols-2 gap-4">
                   <div className="pr-4">
                     <h3 className="text-4xl font-bold mb-2">85%</h3>
-                    <p className="text-lg text-neutral-500 pr-6">success rate for this example</p>
+                    <p className="text-lg text-neutral-500 pr-6">skill improvement among employees</p>
                     <hr className="my-4"/>
                   </div>
                   <div className="pl-4">
                     <h3 className="text-4xl font-bold mb-2">90%</h3>
-                    <p className="text-lg text-neutral-500 pr-6">satisfaction rate</p>
+                    <p className="text-lg text-neutral-500 pr-6">employee satisfaction with training</p>
                     <hr className="my-4"/>
                   </div>
                 </div>
@@ -929,7 +1057,43 @@ const CourseBanner = () => {
               <div className="flex items-center justify-center">
                 <img 
                   src="https://via.placeholder.com/600x400" 
-                  alt="Placeholder" 
+                  alt="Tech Company" 
+                  className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
+                />
+              </div>
+            </div>
+
+            {/* Slide 3 */}
+            <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="pr-8">
+                <span className="text-2xl border-r pr-4 border-neutral-500">Global</span>
+                <span className="text-2xl border-r pr-4 border-neutral-500">Finance</span>
+                <span className="text-2xl">Corp</span>
+                <h3 className="text-3xl font-semibold py-8">Financial Institution Transforms Workforce with Digital Learning</h3>
+                
+                <div className="my-8 grid grid-cols-2 gap-4">
+                  <div className="pr-4">
+                    <h3 className="text-4xl font-bold mb-2">75%</h3>
+                    <p className="text-lg text-neutral-500 pr-6">faster onboarding for new hires</p>
+                    <hr className="my-4"/>
+                  </div>
+                  <div className="pl-4">
+                    <h3 className="text-4xl font-bold mb-2">88%</h3>
+                    <p className="text-lg text-neutral-500 pr-6">of employees completed certification</p>
+                    <hr className="my-4"/>
+                  </div>
+                </div>
+                
+                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                  <span>Get Started</span>
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
+                </button>
+              </div>
+              
+              <div className="flex items-center justify-center">
+                <img 
+                  src="https://via.placeholder.com/600x400/333/fff" 
+                  alt="Finance Corp" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
               </div>
@@ -937,56 +1101,36 @@ const CourseBanner = () => {
           </div>
           
           {/* Slider Navigation */}
-          <div className="flex  mt-8 space-x-4">
+          <div className="flex justify-start mt-8 space-x-4">
             <button 
               onClick={goToPrevSlide}
-              className="slider-prev   text-primary   transition-colors duration-300"
+              className="slider-prev px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
-              &larr; Prev
+              &larr; 
             </button>
+            
+            {/* Slide indicators */}
+            {[...Array(totalSlides)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-primary' : 'bg-neutral-300'}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+            
             <button 
               onClick={goToNextSlide}
-              className="slider-next  text-primary  transition-colors duration-300"
+              className="slider-next px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
-              Next &rarr;
+            &rarr;
             </button>
           </div>
         </div>
       </div>
-
-      {/* Add these styles to your global CSS file or CSS-in-JS solution */}
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-          from { 
-            transform: translateY(20px);
-            opacity: 0; 
-          }
-          to { 
-            transform: translateY(0);
-            opacity: 1; 
-          }
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.5s ease-out forwards;
-        }
-        .animation-delay-100 {
-          animation-delay: 0.1s;
-        }
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-        .animation-delay-300 {
-          animation-delay: 0.3s;
-        }
-      `}</style>
     </div>
+
+    
 
 
  </>
