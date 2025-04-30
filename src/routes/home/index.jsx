@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp, FileText, Video, Target, BarChart2, Clock1, CheckCircle } from "lucide-react";
+import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp, FileText, Video, Target, BarChart2, Clock1, CheckCircle, ChevronLeft } from "lucide-react";
 import banner from "../../assets/banner_high_res.png"
 import samsung_logo from "../../assets/samsung_logo.svg"
 import cisco_logo from "../../assets/cisco_logo.svg"
@@ -1051,9 +1051,9 @@ const courses = {
             {/* Slide 1 */}
             <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="pr-8">
-                <span className="text-2xl border-r pr-4 border-neutral-500">Booz</span>
-                <span className="text-2xl border-r pr-4 border-neutral-500">Allen</span>
-                <span className="text-2xl">Hemilton</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Booz</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Allen</span>
+                <span className="text-2xl pl-2">Hemilton</span>
                 <h3 className="text-3xl font-semibold py-8">Booz Allen Hamilton Unlocks Talent Retention and Productivity Through Upskilling</h3>
                 
                 <div className="my-8 grid grid-cols-2 gap-4">
@@ -1087,9 +1087,9 @@ const courses = {
             {/* Slide 2 */}
             <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="pr-8">
-                <span className="text-2xl border-r pr-4 border-neutral-500">Tech</span>
-                <span className="text-2xl border-r pr-4 border-neutral-500">Company</span>
-                <span className="text-2xl">Inc</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Tech</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Company</span>
+                <span className="text-2xl pl-2">Inc</span>
                 <h3 className="text-3xl font-semibold py-8">Tech Company Improves Employee Skills with Online Learning Platform</h3>
                 
                 <div className="my-8 grid grid-cols-2 gap-4">
@@ -1113,7 +1113,7 @@ const courses = {
               
               <div className="flex items-center justify-center">
                 <img 
-                  src="https://via.placeholder.com/600x400" 
+                  src="https://st2.depositphotos.com/20363444/47416/i/450/depositphotos_474164570-stock-photo-cheerful-businessman-holding-laptop-african.jpg" 
                   alt="Tech Company" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
@@ -1123,9 +1123,9 @@ const courses = {
             {/* Slide 3 */}
             <div className="slider-slide min-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="pr-8">
-                <span className="text-2xl border-r pr-4 border-neutral-500">Global</span>
-                <span className="text-2xl border-r pr-4 border-neutral-500">Finance</span>
-                <span className="text-2xl">Corp</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Global</span>
+                <span className="px-2 text-2xl border-r border-neutral-500">Finance</span>
+                <span className="text-2xl pl-2">Corp</span>
                 <h3 className="text-3xl font-semibold py-8">Financial Institution Transforms Workforce with Digital Learning</h3>
                 
                 <div className="my-8 grid grid-cols-2 gap-4">
@@ -1149,7 +1149,7 @@ const courses = {
               
               <div className="flex items-center justify-center">
                 <img 
-                  src="https://via.placeholder.com/600x400/333/fff" 
+                  src="https://img.freepik.com/free-photo/middle-aged-hispanic-business-people_23-2151098612.jpg?semt=ais_hybrid&w=740" 
                   alt="Finance Corp" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
@@ -1163,7 +1163,7 @@ const courses = {
               onClick={goToPrevSlide}
               className="slider-prev px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
-              &larr; 
+           <ChevronLeft />
             </button>
             
             {/* Slide indicators */}
@@ -1171,7 +1171,7 @@ const courses = {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-primary' : 'bg-neutral-300'}`}
+                className={`w-3 h-3 rounded-full mt-4 ${currentSlide === index ? 'bg-primary' : 'bg-neutral-300'}`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
@@ -1180,7 +1180,7 @@ const courses = {
               onClick={goToNextSlide}
               className="slider-next px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
-            &rarr;
+           <ChevronRight />
             </button>
           </div>
         </div>
