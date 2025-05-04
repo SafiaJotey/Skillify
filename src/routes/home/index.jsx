@@ -15,6 +15,10 @@ import Title from "../../components/Title";
 import { useRef, useState } from 'react';
 import ReviewSection from "../../components/Reviews";
 import GetStartedSection from "../../components/GetStartedSection";
+import Courses from "../../components/Courses";
+import Categories from "../../components/Categories";
+import { useNavigate } from "react-router-dom";
+
 
 const CourseBanner = () => {
   const controls = useAnimation();
@@ -22,26 +26,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 const sliderContainerRef = useRef(null);
 const totalSlides = 3;
 
-
-const tabVariants = {
-  active: {
-    color: '#111827',
-    borderBottomWidth: '2px',
-    borderColor: '#06b6d4'
-  },
-  inactive: {
-    color: '#64748b',
-    borderBottomWidth: '0px'
-  }
-};
-
-const cardVariants = {
-  hover: {
-    y: -5,
-    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)'
-  }
-};
-
+const navigate=useNavigate()
 const goToSlide = (index) => {
   setCurrentSlide(index);
   if (sliderContainerRef.current) {
@@ -97,14 +82,7 @@ useEffect(() => {
       }
     }
   };
-  const categories = [
-    { id: 1, name: 'Web Development', courseCount: 42 },
-    { id: 2, name: 'Data Science', courseCount: 28 },
-    { id: 3, name: 'Mobile Development', courseCount: 35 },
-    { id: 4, name: 'UI/UX Design', courseCount: 19 },
-    { id: 5, name: 'Cloud Computing', courseCount: 31 },
-    { id: 6, name: 'DevOps', courseCount: 23 },
-  ];
+
   const floatingItem = {
     hidden: { y: 30, opacity: 0 },
     visible: (i) => ({
@@ -170,74 +148,6 @@ useEffect(() => {
     }
   };
  
-const courses = {
-  all: [
-    {
-      id: 1,
-      title: "Advanced React Patterns",
-      description: "Master modern React architecture and advanced component patterns used by top companies.",
-      category: "development",
-      duration: "8h 30m",
-      lessons: 42,
-      level: "Advanced",
-      icon: <BookOpen className="w-5 h-5 text-primary-500" />
-    },
-    {
-      id: 2,
-      title: "UI/UX Design Fundamentals",
-      description: "Learn the core principles of user interface and experience design from industry experts.",
-      category: "design",
-      duration: "6h 15m",
-      lessons: 35,
-      level: "Beginner",
-      icon: <FileText className="w-5 h-5 text-secondary-500" />
-    },
-    {
-      id: 3,
-      title: "Node.js Microservices",
-      description: "Build scalable microservices architecture with Node.js and Docker.",
-      category: "development",
-      duration: "10h",
-      lessons: 58,
-      level: "Intermediate",
-      icon: <BookOpen className="w-5 h-5 text-primary-500" />
-    }
-  ],
-  development: [
-    {
-      id: 1,
-      title: "Advanced React Patterns",
-      description: "Master modern React architecture and advanced component patterns used by top companies.",
-      duration: "8h 30m",
-      lessons: 42,
-      level: "Advanced",
-      icon: <BookOpen className="w-5 h-5 text-primary-500" />
-    },
-    {
-      id: 3,
-      title: "Node.js Microservices",
-      description: "Build scalable microservices architecture with Node.js and Docker.",
-      duration: "10h",
-      lessons: 58,
-      level: "Intermediate",
-      icon: <BookOpen className="w-5 h-5 text-primary-500" />
-    }
-  ],
-  design: [
-    {
-      id: 2,
-      title: "UI/UX Design Fundamentals",
-      description: "Learn the core principles of user interface and experience design from industry experts.",
-      duration: "6h 15m",
-      lessons: 35,
-      level: "Beginner",
-      icon: <FileText className="w-5 h-5 text-secondary-500" />
-    }
-  ]
-};
-
-  const [activeTab, setActiveTab] = useState('all');
-  
   const goals = [
     {
       icon: <Target className="w-6 h-6 text-primary-500" />,
@@ -270,6 +180,9 @@ const courses = {
       ]
     }
   ];
+  const loadCourses = () => {
+    navigate("/courses")
+  };
 
   const stats = [
     { value: "87%", label: "Career advancement", icon: <Award className="w-5 h-5" /> },
@@ -400,7 +313,7 @@ const courses = {
            </motion.div>
 
            <motion.div variants={floatingItem} custom={4} className="flex flex-wrap gap-4">
-             <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
+             <button onclick={loadCourses} className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
                <span>Start Learning</span>
                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
              </button>
@@ -684,6 +597,7 @@ const courses = {
  
 
 
+<Courses/>
 
 
 
@@ -691,158 +605,7 @@ const courses = {
 
 
 
-
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-dark-800 mb-4"
-          >
-            Explore Our Courses
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-lg text-neutral-500 max-w-2xl mx-auto"
-          >
-            Learn in-demand skills with our comprehensive curriculum designed by industry professionals.
-          </motion.p>
-        </div>
-
-        <div className="mb-10">
-          <div className="flex justify-center gap-2 md:gap-6 border-b border-neutral-200">
-            {['all', 'development', 'design'].map((tab) => (
-              <motion.button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                initial={false}
-                animate={activeTab === tab ? 'active' : 'inactive'}
-                variants={tabVariants}
-                className="px-4 py-3 text-sm md:text-base font-medium capitalize transition-colors"
-              >
-                {tab === 'all' ? 'All Courses' : tab}
-                {activeTab === tab && (
-                  <motion.div 
-                    layoutId="tabIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses[activeTab].map((course) => (
-            <motion.div
-              key={course.id}
-              whileHover="hover"
-              variants={cardVariants}
-              className="bg-white rounded-xl border border-neutral-200 overflow-hidden transition-all"
-            >
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-primary-50">
-                    {course.icon}
-                  </div>
-                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-neutral-100 text-neutral-600">
-                    {course.level}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl font-bold text-dark-800 mb-2">{course.title}</h3>
-                <p className="text-neutral-500 mb-4">{course.description}</p>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-neutral-500 mb-6">
-                  <span className="flex items-center gap-1">
-                    <Video className="w-4 h-4" />
-                    {course.lessons} lessons
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Award className="w-4 h-4" />
-                    {course.duration}
-                  </span>
-                </div>
-                
-                <button className="w-full flex items-center justify-between group">
-                  <span className="font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
-                    View Course
-                  </span>
-                  <ChevronRight className="w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <button className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg">
-            Browse All Courses
-          </button>
-        </motion.div>
-      </div>
-    </section>
-
-
-    <section className="py-12 bg-neutral-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-neutral-800 mb-8">Browse Categories</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category) => (
-            <div 
-              key={category.id} 
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
-            >
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                    <svg 
-                      className="w-6 h-6 text-primary-600" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" 
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-neutral-800">{category.name}</h3>
-                </div>
-                <p className="text-neutral-500 mb-4">Explore {category.courseCount} courses in this category</p>
-                <button className="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-300">
-                  View Courses
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-10 text-center">
-          <button className="px-6 py-3 border-2 border-primary-500 text-primary-500 font-medium rounded-md hover:bg-primary-50 transition-colors duration-300">
-            View All Categories
-          </button>
-        </div>
-      </div>
-    </section>
+<Categories/>
     <ReviewSection/>
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const GetStartedSection = () => {
   // Animation variants
@@ -50,7 +51,10 @@ const GetStartedSection = () => {
       icon: "🎓",
     },
   ];
-
+  const navigate=useNavigate()
+  const loadMoreCourses = () => {
+    navigate("/auth/login")
+  }
   return (
     <section className="py-16 bg-dark-800 relative overflow-hidden">
       {/* Background gradient (optional) */}
@@ -92,7 +96,7 @@ const GetStartedSection = () => {
               key={step.id}
               variants={itemVariants}
               whileHover="hover"
-              variants={cardHover}
+              // variants={cardHover}
               className="bg-dark-700 p-6 rounded-xl border border-neutral-800 hover:border-primary-500 transition-all"
             >
               <div className="flex items-center mb-4">
@@ -119,6 +123,7 @@ const GetStartedSection = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="px-8 py-3 bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg shadow-lg transition-all"
+            onClick={loadMoreCourses}
           >
             Get Started for Free
           </motion.button>

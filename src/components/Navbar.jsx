@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import logo from "../assets/fullLogo.png"
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -14,17 +15,22 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const navigate=useNavigate()
+  const getStart = () => {
+    navigate("/auth/login")
+  };
 
+  
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Features', href: '#features' },
+    { name: 'Courses', href: '/courses' },
     { 
-      name: 'Products', 
-      href: '#products',
+      name: 'Categories', 
+    
       subItems: [
-        { name: 'Web Design', href: '#web-design' },
-        { name: 'Development', href: '#development' },
-        { name: 'Marketing', href: '#marketing' }
+        { name: 'Web Design', href: '/category' },
+        { name: 'Development', href: '/category' },
+        { name: 'Marketing', href: '/category'  }
       ]
     },
     { name: 'Pricing', href: '#pricing' },
@@ -113,6 +119,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <motion.button
+             onClick={getStart}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-primary-900 text-white font-medium shadow-lg hover:shadow-xl transition-all"
@@ -173,6 +180,7 @@ const Navbar = () => {
               ))}
               <div className="px-3 py-4">
                 <motion.button
+                 onClick={getStart}
                   whileTap={{ scale: 0.95 }}
                   className="w-full px-6 py-2 rounded-full bg-gradient-to-r  from-primary-600 to-secondary-900 text-white font-medium shadow-lg"
                 >
