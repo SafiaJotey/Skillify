@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function CoursesPage() {
+  const navigate=useNavigate()
   const courses = [
     {
       id: 1,
@@ -70,6 +71,9 @@ export default function CoursesPage() {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
     }
   ];
+  const courseDetails = () => {
+    navigate("/courseDetails")
+  };
 
   const categories = [
     "All Categories",
@@ -183,6 +187,7 @@ export default function CoursesPage() {
                   </div>
                 </div>
                 <motion.button
+                onClick={courseDetails}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full mt-4 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-medium shadow-md transition-all"

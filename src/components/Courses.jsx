@@ -311,6 +311,9 @@ export default function Courses() {
   const loadMoreCourses = () => {
     navigate("/courses")
   };
+  const courseDetails = () => {
+    navigate("/courseDetails")
+  };
 
   const currentCourses = courses[activeTab].slice(0, visibleCourses);
 
@@ -398,7 +401,7 @@ export default function Courses() {
                   </span>
                 </div>
                 
-                <button className="w-full flex items-center justify-between group">
+                <button className="w-full flex items-center justify-between group"  onClick={courseDetails}> 
                   <span className="font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
                     View Course
                   </span>
