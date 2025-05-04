@@ -28,13 +28,13 @@ const Navbar = () => {
       name: 'Categories', 
     
       subItems: [
-        { name: 'Web Design', href: '/category' },
-        { name: 'Development', href: '/category' },
-        { name: 'Marketing', href: '/category'  }
+        { name: 'Web Design', href: `/category/${"1"}` },
+        { name: 'Development', href: '/category/2' },
+        { name: 'Marketing', href: '/category/3'  }
       ]
     },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '#contact' }
+    // { name: 'Pricing', href: '#pricing' },
+    // { name: 'Contact', href: '#contact' }
   ];
 
   const toggleDropdown = (index) => {

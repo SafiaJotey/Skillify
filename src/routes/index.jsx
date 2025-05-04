@@ -23,11 +23,11 @@ export const router=createBrowserRouter([
                 element:<Home/>
             },
             {
-                path:'/category',
+                path:`/category/:id`,
                 element:<Category/>
             },
             {
-                path:'/courseDetails',
+                path:'/courseDetails/:id',
                 element:<CourseDetailsPage/>
             },
             {
