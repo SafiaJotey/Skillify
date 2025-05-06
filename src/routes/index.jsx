@@ -13,6 +13,7 @@ import CoursesPage from "./courses";
 
 
 
+
 export const router=createBrowserRouter([
     {
         path:'/',

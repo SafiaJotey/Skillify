@@ -5,6 +5,7 @@ import {
   Shield, Bookmark, FileText, HelpCircle, MessageSquare
 } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const CourseDetailsPage = () => {
   // Sample course data
@@ -142,6 +143,9 @@ const CourseDetailsPage = () => {
       return newState;
     });
   };
+  const location = useLocation();
+  const courseItem = location.state?.course;
+console,console.log(courseItem);
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -161,7 +165,7 @@ const CourseDetailsPage = () => {
             >
               <div className="flex-1">
                 <span className="inline-block bg-white/20 px-3 py-1 rounded-full text-sm mb-4">
-                  {course.category}
+                  {courseItem?.category}
                 </span>
                 <motion.h1 
                   className="text-4xl md:text-5xl font-bold mb-4"
@@ -169,33 +173,34 @@ const CourseDetailsPage = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  {course.title}
+                  {courseItem?.title}
                 </motion.h1>
-                <p className="text-xl mb-6 max-w-3xl">{course.description}</p>
+                <p className="text-xl mt-10 mb-6 max-w-3xl">{courseItem?.about}</p>
+                <p className="text-xl mb-6 max-w-3xl">{courseItem?.Description}</p>
                 
-                <div className="flex flex-wrap items-center gap-6 mb-8">
+                <div className="flex flex-wrap items-center gap-6 mb-8 mt-16">
                   <div className="flex items-center">
                     <div className="flex items-center mr-2">
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`w-5 h-5 ${i < Math.floor(course.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-white/30'}`}
+                          className={`w-5 h-5 ${i < Math.floor(courseItem?.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-white/30'}`}
                         />
                       ))}
                     </div>
-                    <span>{course.rating} ({course.CountReviews.toLocaleString()} reviews)</span>
+                    <span>{courseItem?.rating} ({courseItem?.reviewsCount.toLocaleString()} reviews)</span>
                   </div>
                   <div className="flex items-center">
                     <Users className="w-5 h-5 mr-2" />
-                    <span>{course.students.toLocaleString()} students</span>
+                    <span>{courseItem?.students.toLocaleString()} students</span>
                   </div>
                   <div className="flex items-center">
                     <Clock className="w-5 h-5 mr-2" />
-                    <span>{course.duration}</span>
+                    <span>{courseItem?.duration}</span>
                   </div>
                   <div className="flex items-center">
                     <Award className="w-5 h-5 mr-2" />
-                    <span>{course.level}</span>
+                    <span>{courseItem?.level}</span>
                   </div>
                 </div>
               </div>
@@ -214,9 +219,9 @@ const CourseDetailsPage = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-end mb-4">
-                      <span className="text-3xl font-bold">${course.discountPrice}</span>
-                      {course.discountPrice < course.price && (
-                        <span className="ml-2 text-white/70 line-through">${course.price}</span>
+                      <span className="text-3xl font-bold">{courseItem?.discountedPrice}</span>
+                      {courseItem?.discountedPrice < courseItem?.price && (
+                        <span className="ml-2 text-white/70 line-through">{courseItem?.price}</span>
                       )}
                     </div>
                     <button className="w-full bg-white text-primary-700 hover:bg-neutral-100 font-bold py-3 px-4 rounded-lg mb-4 transition-colors">
@@ -225,7 +230,7 @@ const CourseDetailsPage = () => {
                     <p className="text-center text-sm text-white/80 mb-4">30-Day Money-Back Guarantee</p>
                     <h3 className="font-bold mb-3">This course includes:</h3>
                     <ul className="space-y-2 text-white/90">
-                      {course.includes.slice(0, 4).map((item, i) => (
+                      { courseItem?.courseIncludes?.map((item, i) => (
                         <li key={i} className="flex items-center">
                           <CheckCircle className="w-4 h-4 mr-2" />
                           <span className="text-sm">{item}</span>
@@ -255,7 +260,7 @@ const CourseDetailsPage = () => {
               >
                 <h2 className="text-2xl font-bold text-dark-800 mb-6">Description</h2>
                 <div className="prose max-w-none text-neutral-700">
-                  <p>{course.longDescription}</p>
+                  <p>{ courseItem?.Description}</p>
                 </div>
               </motion.div>
 
@@ -268,7 +273,7 @@ const CourseDetailsPage = () => {
               >
                 <h2 className="text-2xl font-bold text-dark-800 mb-6">What you'll learn</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {course.highlights.map((highlight, index) => (
+                  {courseItem?.learn.map((highlight, index) => (
                     <motion.div 
                       key={index} 
                       variants={item}
@@ -291,7 +296,12 @@ const CourseDetailsPage = () => {
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-2xl font-bold text-dark-800">Course content</h2>
                   <span className="text-neutral-600">
-                    {course.sections.length} sections • {course.sections.reduce((acc, section) => acc + section.lectures.length, 0)} lectures • {course.duration}
+                    {courseItem.
+courseContent
+.length} sections 
+{/* • {courseItem.
+  courseContent.lectures?.reduce((acc, section) => acc + section.lectures.length, 0)}  */}
+   • {courseItem.duration}
                   </span>
                 </div>
 
@@ -358,7 +368,7 @@ const CourseDetailsPage = () => {
               >
                 <h2 className="text-2xl font-bold text-dark-800 mb-6">Requirements</h2>
                 <ul className="space-y-3">
-                  {course.requirements.map((requirement, index) => (
+                  {courseItem.requirements.map((requirement, index) => (
                     <li key={index} className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 mr-3"></span>
                       <span>{requirement}</span>

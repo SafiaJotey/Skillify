@@ -265,6 +265,7 @@ export default function Courses() {
         icon: <Database className="w-5 h-5 text-blue-500" />,
         image: courseImages[4]
       },
+     
       {
         id: 10,
         title: "Machine Learning Basics",

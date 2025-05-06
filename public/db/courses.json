@@ -1,0 +1,1044 @@
+[
+    {
+      "id": 1,
+      "title": "Advanced Animation with Framer Motion",
+      "about": "Master professional animation techniques used by top tech companies. Learn to create fluid, performant animations for modern web applications using Framer Motion and React.",
+      "instructor": {
+        "name": "Devid Yong",
+        "ratings": "5",
+        "courses": 8,
+        "students": 43000,
+        "about": "Senior Animation Designer with 10+ years experience working with Fortune 500 companies. Specializes in creating performant, accessible animations for web and mobile applications."
+      },
+      "category": "Web Development",
+      "level": "Intermediate",
+      "duration": "14h 30m",
+      "students": 3664,
+      "rating": "4.5",
+      "reviewsCount": 1759,
+      "price": "$435",
+      "hasDiscount": true,
+      "discountedPrice": "$124",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 68,
+      "courseIncludes": [
+        "28 hours on-demand video",
+        "15 articles and resources",
+        "10 downloadable assets",
+        "Full lifetime access"
+      ],
+      "Description": "This comprehensive course takes you from animation fundamentals to advanced techniques. You'll learn how to create stunning user experiences through motion design, optimize performance, and implement complex animations in real-world projects. By the end, you'll be able to build professional-grade animations that delight users and enhance usability.",
+      "learn": [
+        "Create complex animations with Framer Motion",
+        "0 real-world projects with source code",
+        "Interactive component patterns",
+        "Advanced layout animations",
+        "30+ professional animation techniques",
+        "Performance optimization strategies",
+        "Gesture-based animations"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Get Started": [
+              {
+                "title": "Introduction to Motion Design",
+                "lesson": 2,
+                "duration": "12:45"
+              },
+              {
+                "title": "Setting Up Framer Motion",
+                "lesson": 2,
+                "duration": "10:45"
+              },
+              {
+                "title": "Your First Animation",
+                "lesson": 3,
+                "duration": "13:45"
+              }
+            ]
+          }
+        ],
+        "duration": "14 hours 30 minutes"
+      },
+      "requirements": [
+        "Basic React knowledge",
+        "JavaScript fundamentals",
+        "CSS basics"
+      ],
+      "courseReview": [
+        {
+          "name": "Sarah Johnson",
+          "coment": "This course transformed how I approach animations. The real-world projects were incredibly valuable for my portfolio.",
+          "rating": "5",
+          "ago": "1 month"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 2,
+      "title": "Complete Python Bootcamp",
+      "about": "Go from zero to hero in Python with this comprehensive course that covers everything from basics to advanced topics.",
+      "instructor": {
+        "name": "Jose Portilla",
+        "ratings": "4.8",
+        "courses": 12,
+        "students": 1200000,
+        "about": "Data scientist and professional instructor with over 10 years of experience teaching Python and data science."
+      },
+      "category": "Programming",
+      "level": "Beginner",
+      "duration": "22h",
+      "students": 125000,
+      "rating": "4.7",
+      "reviewsCount": 45200,
+      "price": "$199",
+      "hasDiscount": true,
+      "discountedPrice": "$19.99",
+      "image": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 185,
+      "courseIncludes": [
+        "22 hours on-demand video",
+        "19 coding exercises",
+        "3 articles",
+        "Full lifetime access"
+      ],
+      "Description": "This is the most comprehensive, yet straightforward course for the Python programming language. Whether you have never programmed before, already know basic syntax, or want to learn advanced Python features, this course is for you!",
+      "learn": [
+        "Python fundamentals",
+        "Object-oriented programming",
+        "Web scraping",
+        "Working with files",
+        "Automation",
+        "Data visualization"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Python Basics": [
+              {
+                "title": "Python Setup",
+                "lesson": 1,
+                "duration": "15:00"
+              },
+              {
+                "title": "Python Syntax",
+                "lesson": 2,
+                "duration": "25:30"
+              }
+            ]
+          }
+        ],
+        "duration": "22 hours"
+      },
+      "requirements": [
+        "Computer with internet connection",
+        "No prior knowledge required"
+      ],
+      "courseReview": [
+        {
+          "name": "Michael Brown",
+          "coment": "Excellent course for beginners. Jose explains everything clearly and at a good pace.",
+          "rating": "5",
+          "ago": "2 weeks"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 3,
+      "title": "The Complete JavaScript Course 2024",
+      "about": "Modern JavaScript from the beginning - all the way up to expert level! The must-have JavaScript resource in 2024.",
+      "instructor": {
+        "name": "Jonas Schmedtmann",
+        "ratings": "4.9",
+        "courses": 5,
+        "students": 800000,
+        "about": "Web developer, designer, and teacher. Worked with companies like Google and Booking.com."
+      },
+      "category": "Web Development",
+      "level": "Advanced",
+      "duration": "69h",
+      "students": 320000,
+      "rating": "4.8",
+      "reviewsCount": 78000,
+      "price": "$299",
+      "hasDiscount": true,
+      "discountedPrice": "$29.99",
+      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 320,
+      "courseIncludes": [
+        "69 hours on-demand video",
+        "50 coding challenges",
+        "30 articles",
+        "Full lifetime access"
+      ],
+      "Description": "This is the most complete JavaScript course on Udemy. It's an all-in-one package that will take you from the very fundamentals of JavaScript, all the way to building modern and complex applications.",
+      "learn": [
+        "Modern JavaScript from scratch",
+        "How to think and work like a developer",
+        "Build 6 beautiful real-world projects",
+        "Asynchronous JavaScript",
+        "Modern ES6+ features"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "JavaScript Fundamentals": [
+              {
+                "title": "Welcome to the Course",
+                "lesson": 1,
+                "duration": "10:00"
+              },
+              {
+                "title": "Variables and Data Types",
+                "lesson": 2,
+                "duration": "30:00"
+              }
+            ]
+          }
+        ],
+        "duration": "69 hours"
+      },
+      "requirements": [
+        "No coding experience needed",
+        "Basic computer skills"
+      ],
+      "courseReview": [
+        {
+          "name": "Emily Wilson",
+          "coment": "Changed my career! After this course I got my first developer job.",
+          "rating": "5",
+          "ago": "3 months"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 4,
+      "title": "Machine Learning A-Z",
+      "about": "Hands-on Python & R in Data Science including all the machine learning models with real-world applications.",
+      "instructor": {
+        "name": "Kirill Eremenko",
+        "ratings": "4.6",
+        "courses": 15,
+        "students": 1500000,
+        "about": "Data science professional with expertise in AI and machine learning. Former analytics consultant."
+      },
+      "category": "Data Science",
+      "level": "Intermediate",
+      "duration": "44h",
+      "students": 850000,
+      "rating": "4.6",
+      "reviewsCount": 125000,
+      "price": "$399",
+      "hasDiscount": true,
+      "discountedPrice": "$39.99",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 280,
+      "courseIncludes": [
+        "44 hours on-demand video",
+        "50 articles",
+        "10 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "Interested in the field of Machine Learning? Then this course is for you! This course has been designed by two professional Data Scientists so that we can share our knowledge and help you learn complex theory, algorithms, and coding libraries in a simple way.",
+      "learn": [
+        "Master Machine Learning on Python & R",
+        "Make accurate predictions",
+        "Handle specific topics like Reinforcement Learning",
+        "Build an army of powerful Machine Learning models"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Data Preprocessing": [
+              {
+                "title": "Importing the Libraries",
+                "lesson": 1,
+                "duration": "15:00"
+              },
+              {
+                "title": "Importing the Dataset",
+                "lesson": 2,
+                "duration": "20:00"
+              }
+            ]
+          }
+        ],
+        "duration": "44 hours"
+      },
+      "requirements": [
+        "High school mathematics",
+        "Basic Python knowledge"
+      ],
+      "courseReview": [
+        {
+          "name": "David Chen",
+          "coment": "Excellent introduction to ML concepts with practical implementations.",
+          "rating": "5",
+          "ago": "2 months"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 5,
+      "title": "Advanced CSS and Sass",
+      "about": "The most advanced and modern CSS course on the internet. Master flexbox, CSS Grid, responsive design, and so much more.",
+      "instructor": {
+        "name": "Jonas Schmedtmann",
+        "ratings": "4.9",
+        "courses": 5,
+        "students": 800000,
+        "about": "Web developer, designer, and teacher. Worked with companies like Google and Booking.com."
+      },
+      "category": "Web Development",
+      "level": "Intermediate",
+      "duration": "28h",
+      "students": 125000,
+      "rating": "4.8",
+      "reviewsCount": 32000,
+      "price": "$249",
+      "hasDiscount": true,
+      "discountedPrice": "$24.99",
+      "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 150,
+      "courseIncludes": [
+        "28 hours on-demand video",
+        "30 articles",
+        "15 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "You will learn tons of modern CSS techniques to create stunning designs and effects. Advanced CSS animations, flexbox layouts, CSS Grid, responsive design, and so much more. This course is for any developer who wants to become an advanced CSS developer.",
+      "learn": [
+        "Advanced CSS animations",
+        "Flexbox layouts",
+        "CSS Grid",
+        "Responsive design",
+        "Sass fundamentals"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Introduction": [
+              {
+                "title": "Course Overview",
+                "lesson": 1,
+                "duration": "10:00"
+              },
+              {
+                "title": "Setting Up Your Environment",
+                "lesson": 2,
+                "duration": "15:00"
+              }
+            ]
+          }
+        ],
+        "duration": "28 hours"
+      },
+      "requirements": [
+        "Basic CSS knowledge",
+        "HTML fundamentals"
+      ],
+      "courseReview": [
+        {
+          "name": "Lisa Thompson",
+          "coment": "Took my CSS skills to the next level. The projects are amazing for portfolios.",
+          "rating": "5",
+          "ago": "1 month"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 6,
+      "title": "The Complete Digital Marketing Course",
+      "about": "Master Digital Marketing: Strategy, Social Media Marketing, SEO, YouTube, Email, Facebook Marketing, Analytics & More!",
+      "instructor": {
+        "name": "Rob Percival",
+        "ratings": "4.5",
+        "courses": 10,
+        "students": 500000,
+        "about": "Digital marketing expert with over 15 years of experience helping businesses grow online."
+      },
+      "category": "Marketing",
+      "level": "Advanced",
+      "duration": "23h",
+      "students": 250000,
+      "rating": "4.4",
+      "reviewsCount": 45000,
+      "price": "$199",
+      "hasDiscount": true,
+      "discountedPrice": "$19.99",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 180,
+      "courseIncludes": [
+        "23 hours on-demand video",
+        "30 articles",
+        "10 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "This 12-course bundle covers every major digital marketing channel including social media marketing, YouTube marketing, email marketing, Google and Facebook ads, SEO, copywriting, and more!",
+      "learn": [
+        "Digital marketing strategy",
+        "Social media marketing",
+        "SEO and SEM",
+        "Email marketing",
+        "Google Analytics"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Introduction to Digital Marketing": [
+              {
+                "title": "Course Overview",
+                "lesson": 1,
+                "duration": "15:00"
+              },
+              {
+                "title": "The Digital Marketing Landscape",
+                "lesson": 2,
+                "duration": "20:00"
+              }
+            ]
+          }
+        ],
+        "duration": "23 hours"
+      },
+      "requirements": [
+        "No experience needed",
+        "Internet connection"
+      ],
+      "courseReview": [
+        {
+          "name": "Mark Johnson",
+          "coment": "Comprehensive overview of all digital marketing channels. Great for beginners.",
+          "rating": "4",
+          "ago": "2 weeks"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 7,
+      "title": "Complete Blender Creator",
+      "about": "Learn 3D Modelling, Animation, UV Mapping, Texture Painting, Particle Systems and more with the free 3D software Blender.",
+      "instructor": {
+        "name": "GameDev.tv Team",
+        "ratings": "4.7",
+        "courses": 20,
+        "students": 600000,
+        "about": "Professional game developers and educators passionate about teaching game development and 3D art."
+      },
+      "category": "3D & Animation",
+      "level": "Beginner",
+      "duration": "52h",
+      "students": 180000,
+      "rating": "4.7",
+      "reviewsCount": 42000,
+      "price": "$299",
+      "hasDiscount": true,
+      "discountedPrice": "$29.99",
+      "image": "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 220,
+      "courseIncludes": [
+        "52 hours on-demand video",
+        "30 articles",
+        "15 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "This course is continually updated in response to student suggestions - it has been completely updated to Blender 3.0 and beyond. You'll learn all of the 3D modelling, sculpting, animation and rendering tools that Blender has to offer through creating exciting projects.",
+      "learn": [
+        "3D modelling in Blender",
+        "UV mapping and texture painting",
+        "Particle systems for hair and fur",
+        "Animation fundamentals",
+        "Lighting and rendering"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Blender Basics": [
+              {
+                "title": "Introduction to Blender",
+                "lesson": 1,
+                "duration": "20:00"
+              },
+              {
+                "title": "Navigating 3D Space",
+                "lesson": 2,
+                "duration": "25:00"
+              }
+            ]
+          }
+        ],
+        "duration": "52 hours"
+      },
+      "requirements": [
+        "No prior experience needed",
+        "Blender (free)"
+      ],
+      "courseReview": [
+        {
+          "name": "Alex Rodriguez",
+          "coment": "Fantastic introduction to Blender. The instructors make complex concepts easy to understand.",
+          "rating": "5",
+          "ago": "3 weeks"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 8,
+      "title": "The Complete Financial Analyst Course",
+      "about": "Excel, Accounting, Financial Statement Analysis, Business Analysis, Financial Math, PowerPoint: Everything is Included!",
+      "instructor": {
+        "name": "365 Careers",
+        "ratings": "4.6",
+        "courses": 25,
+        "students": 1000000,
+        "about": "Finance professionals with experience at top investment banks and financial institutions."
+      },
+      "category": "Finance",
+      "level": "Advanced",
+      "duration": "32h",
+      "students": 220000,
+      "rating": "4.5",
+      "reviewsCount": 38000,
+      "price": "$249",
+      "hasDiscount": true,
+      "discountedPrice": "$24.99",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 190,
+      "courseIncludes": [
+        "32 hours on-demand video",
+        "50 articles",
+        "20 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "This is one of the most comprehensive courses available. It includes everything you'll need to become a financial analyst - from accounting fundamentals to financial statement analysis and business valuation.",
+      "learn": [
+        "Financial statement analysis",
+        "Excel for finance",
+        "Business valuation",
+        "Financial modeling",
+        "PowerPoint for presentations"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Introduction to Financial Analysis": [
+              {
+                "title": "Course Overview",
+                "lesson": 1,
+                "duration": "10:00"
+              },
+              {
+                "title": "The Role of a Financial Analyst",
+                "lesson": 2,
+                "duration": "15:00"
+              }
+            ]
+          }
+        ],
+        "duration": "32 hours"
+      },
+      "requirements": [
+        "Basic math knowledge",
+        "No finance experience needed"
+      ],
+      "courseReview": [
+        {
+          "name": "Jennifer Lee",
+          "coment": "Helped me transition into a financial analyst role. The Excel training alone was worth the price.",
+          "rating": "5",
+          "ago": "2 months"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 9,
+      "title": "Complete Android Development",
+      "about": "Learn Android App Development with Android Studio and Java. Build real apps including Uber, Instagram and more!",
+      "instructor": {
+        "name": "Rob Percival",
+        "ratings": "4.6",
+        "courses": 10,
+        "students": 500000,
+        "about": "Professional app developer with apps in the Play Store with over 1 million downloads."
+      },
+      "category": "Mobile Development",
+      "level": "Beginner",
+      "duration": "37h",
+      "students": 280000,
+      "rating": "4.6",
+      "reviewsCount": 52000,
+      "price": "$299",
+      "hasDiscount": true,
+      "discountedPrice": "$29.99",
+      "image": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 210,
+      "courseIncludes": [
+        "37 hours on-demand video",
+        "25 articles",
+        "15 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "This course will teach you how to build 16 complete Android apps from scratch. You'll learn Java programming and Android development by building real apps including Instagram and Uber clones.",
+      "learn": [
+        "Java programming",
+        "Android Studio",
+        "Firebase authentication",
+        "Google Maps integration",
+        "Material Design"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Getting Started": [
+              {
+                "title": "Setting Up Android Studio",
+                "lesson": 1,
+                "duration": "15:00"
+              },
+              {
+                "title": "Your First Android App",
+                "lesson": 2,
+                "duration": "20:00"
+              }
+            ]
+          }
+        ],
+        "duration": "37 hours"
+      },
+      "requirements": [
+        "No programming experience needed",
+        "Windows, Mac or Linux computer"
+      ],
+      "courseReview": [
+        {
+          "name": "Daniel Kim",
+          "coment": "Best Android course I've taken. The projects are practical and look great in my portfolio.",
+          "rating": "5",
+          "ago": "1 month"
+        }
+      ],
+      "faqs": []
+    },
+    {
+      "id": 10,
+      "title": "Complete Photography",
+      "about": "The most popular photography course online! Learn how to use your camera intuitively and take stunning photos.",
+      "instructor": {
+        "name": "Phil Ebiner",
+        "ratings": "4.7",
+        "courses": 30,
+        "students": 2000000,
+        "about": "Professional photographer with over 15 years of experience shooting for magazines and commercial clients."
+      },
+      "category": "Photography",
+      "level": "Beginner",
+      "duration": "18h",
+      "students": 150000,
+      "rating": "4.7",
+      "reviewsCount": 32000,
+      "price": "$199",
+      "hasDiscount": true,
+      "discountedPrice": "$19.99",
+      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "lessons": 120,
+      "courseIncludes": [
+        "18 hours on-demand video",
+        "15 articles",
+        "5 downloadable resources",
+        "Full lifetime access"
+      ],
+      "Description": "This photography course will teach you how to take amazing photos and become a better photographer. Whether you're a beginner or have some experience, this course will improve your photography skills.",
+      "learn": [
+        "Master your camera settings",
+        "Composition techniques",
+        "Lighting fundamentals",
+        "Portrait photography",
+        "Landscape photography"
+      ],
+      "courseContent": {
+        "lectures": [
+          {
+            "Camera Basics": [
+              {
+                "title": "Understanding Exposure",
+                "lesson": 1,
+                "duration": "20:00"
+              },
+              {
+                "title": "Aperture, Shutter Speed and ISO",
+                "lesson": 2,
+                "duration": "25:00"
+              }
+            ]
+          }
+        ],
+        "duration": "18 hours"
+      },
+      "requirements": [
+        "Any camera (DSLR, mirrorless, or smartphone)",
+        "No prior knowledge needed"
+      ],
+      "courseReview": [
+        {
+          "name": "Sophia Martinez",
+          "coment": "Completely changed how I take photos. My Instagram following has grown 300% since taking this course.",
+          "rating": "5",
+          "ago": "3 weeks"
+        }
+      ],
+      "faqs": []
+    },
+    {
+        "id": 11,
+        "title": "Mastering React Query for Scalable Apps",
+        "about": "Build modern, scalable React apps with real-time data fetching, caching, and optimistic updates using React Query.",
+        "instructor": {
+          "name": "Alice Roberts",
+          "ratings": "4.9",
+          "courses": 6,
+          "students": 22000,
+          "about": "Frontend Lead Engineer focused on performance-first architecture and scalable state management."
+        },
+        "category": "Web Development",
+        "level": "Advanced",
+        "duration": "10h 15m",
+        "students": 1800,
+        "rating": "4.7",
+        "reviewsCount": 920,
+        "price": "$380",
+        "hasDiscount": false,
+        "discountedPrice": "",
+        "image": "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80",
+        "lessons": 55,
+        "courseIncludes": [
+          "10 hours on-demand video",
+          "8 articles",
+          "6 downloadable assets",
+          "Full lifetime access"
+        ],
+        "Description": "Deep dive into React Query to build performant, scalable apps with efficient server state management.",
+        "learn": [
+          "Query caching and invalidation",
+          "Parallel and dependent queries",
+          "Optimistic updates and mutations",
+          "Error and loading state handling",
+          "Integration with REST and GraphQL"
+        ],
+        "courseContent": {
+          "lectures": [
+            {
+              "Get Started": [
+                {
+                  "title": "Why React Query",
+                  "lesson": 1,
+                  "duration": "09:30"
+                },
+                {
+                  "title": "Installing and Setup",
+                  "lesson": 2,
+                  "duration": "11:00"
+                }
+              ]
+            }
+          ],
+          "duration": "10 hours 15 minutes"
+        },
+        "requirements": [
+          "React fundamentals",
+          "Basic API knowledge"
+        ],
+        "courseReview": [
+          {
+            "name": "Tom Lee",
+            "coment": "Superb course on server state management. My go-to now for client-side data fetching!",
+            "rating": "5",
+            "ago": "2 weeks"
+          }
+        ],
+        "faqs": []
+      },
+      {
+        "id": 12,
+        "title": "Full-Stack App Development with Next.js",
+        "about": "Learn to build lightning-fast, SEO-optimized, scalable full-stack applications with Next.js.",
+        "instructor": {
+          "name": "Carlos Mendes",
+          "ratings": "4.8",
+          "courses": 5,
+          "students": 34000,
+          "about": "Full-stack Developer and open-source contributor with 12 years in SaaS product development."
+        },
+        "category": "Web Development",
+        "level": "Intermediate",
+        "duration": "16h 40m",
+        "students": 5000,
+        "rating": "4.6",
+        "reviewsCount": 1450,
+        "price": "$420",
+        "hasDiscount": true,
+        "discountedPrice": "$149",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+        "lessons": 85,
+        "courseIncludes": [
+          "16 hours on-demand video",
+          "20 articles",
+          "12 downloadable assets",
+          "Full lifetime access"
+        ],
+        "Description": "Become proficient in Next.js and create high-performance web applications with built-in routing, SSR, and API routes.",
+        "learn": [
+          "Create server-rendered React apps",
+          "Implement authentication",
+          "Integrate with external APIs",
+          "Deploy to Vercel",
+          "Optimize performance and SEO"
+        ],
+        "courseContent": {
+          "lectures": [
+            {
+              "Get Started": [
+                {
+                  "title": "What is Next.js",
+                  "lesson": 1,
+                  "duration": "08:45"
+                },
+                {
+                  "title": "Setup and Project Structure",
+                  "lesson": 2,
+                  "duration": "13:20"
+                }
+              ]
+            }
+          ],
+          "duration": "16 hours 40 minutes"
+        },
+        "requirements": [
+          "React fundamentals",
+          "Node.js basics"
+        ],
+        "courseReview": [
+          {
+            "name": "Emma Watson",
+            "coment": "Perfect course for mastering modern React frameworks. Highly recommend it.",
+            "rating": "5",
+            "ago": "3 months"
+          }
+        ],
+        "faqs": []
+      },{
+        "id": 13,
+        "title": "TypeScript for React Developers",
+        "about": "Confidently type your React apps using TypeScript and improve developer experience with powerful tooling.",
+        "instructor": {
+          "name": "Lena Kim",
+          "ratings": "4.9",
+          "courses": 4,
+          "students": 17500,
+          "about": "Software Engineer passionate about TypeScript and scalable frontend architectures."
+        },
+        "category": "Web Development",
+        "level": "Beginner",
+        "duration": "9h 50m",
+        "students": 2500,
+        "rating": "4.8",
+        "reviewsCount": 800,
+        "price": "$360",
+        "hasDiscount": true,
+        "discountedPrice": "$110",
+        "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+        "lessons": 42,
+        "courseIncludes": [
+          "9 hours on-demand video",
+          "5 articles",
+          "8 downloadable assets",
+          "Full lifetime access"
+        ],
+        "Description": "Learn to confidently type your components, props, and API calls with TypeScript for a better developer workflow.",
+        "learn": [
+          "Typing React props and state",
+          "Using generics with components",
+          "Integrating with APIs",
+          "Type-safe hooks and context",
+          "Advanced utility types"
+        ],
+        "courseContent": {
+          "lectures": [
+            {
+              "Get Started": [
+                {
+                  "title": "Why TypeScript?",
+                  "lesson": 1,
+                  "duration": "07:15"
+                },
+                {
+                  "title": "Installing and Configuring TS",
+                  "lesson": 2,
+                  "duration": "11:05"
+                }
+              ]
+            }
+          ],
+          "duration": "9 hours 50 minutes"
+        },
+        "requirements": [
+          "Basic React knowledge",
+          "JavaScript fundamentals"
+        ],
+        "courseReview": [
+          {
+            "name": "Lucas White",
+            "coment": "Solid intro to TypeScript for frontend projects. Loved the practical examples.",
+            "rating": "5",
+            "ago": "1 month"
+          }
+        ],
+        "faqs": []
+      },
+      {
+        "id": 14,
+        "title": "Responsive Web Design with Flexbox & Grid",
+        "about": "Build modern, mobile-friendly web layouts using CSS Flexbox and Grid.",
+        "instructor": {
+          "name": "Samira Awan",
+          "ratings": "4.7",
+          "courses": 3,
+          "students": 12000,
+          "about": "UI/UX Designer with a focus on web layout systems and responsive design."
+        },
+        "category": "UI/UX Design",
+        "level": "Beginner",
+        "duration": "7h 30m",
+        "students": 4800,
+        "rating": "4.6",
+        "reviewsCount": 520,
+        "price": "$299",
+        "hasDiscount": false,
+        "discountedPrice": "",
+        "image": "https://images.unsplash.com/photo-1611928484115-5215f8ad13cf?auto=format&fit=crop&w=800&q=80",
+        "lessons": 35,
+        "courseIncludes": [
+          "7 hours on-demand video",
+          "6 articles",
+          "4 downloadable assets",
+          "Full lifetime access"
+        ],
+        "Description": "Master CSS layout fundamentals and create responsive, user-friendly web interfaces with modern layout techniques.",
+        "learn": [
+          "Flexbox basics and advanced patterns",
+          "CSS Grid fundamentals",
+          "Responsive navigation layouts",
+          "Building complex grids",
+          "Mobile-first design strategies"
+        ],
+        "courseContent": {
+          "lectures": [
+            {
+              "Get Started": [
+                {
+                  "title": "Why Flexbox & Grid?",
+                  "lesson": 1,
+                  "duration": "06:20"
+                },
+                {
+                  "title": "Setting Up Project",
+                  "lesson": 2,
+                  "duration": "09:50"
+                }
+              ]
+            }
+          ],
+          "duration": "7 hours 30 minutes"
+        },
+        "requirements": [
+          "Basic HTML & CSS",
+          "A text editor"
+        ],
+        "courseReview": [
+          {
+            "name": "Mark Collins",
+            "coment": "Straightforward, easy-to-follow — great for beginners and intermediate developers alike.",
+            "rating": "5",
+            "ago": "2 weeks"
+          }
+        ],
+        "faqs": []
+      },
+      {
+        "id": 15,
+        "title": "API Development with Node.js & Express",
+        "about": "Build scalable, secure RESTful APIs using Node.js and Express, from scratch to deployment.",
+        "instructor": {
+          "name": "Ahmed Aziz",
+          "ratings": "4.8",
+          "courses": 7,
+          "students": 30000,
+          "about": "Backend Developer specializing in RESTful services and cloud deployment."
+        },
+        "category": "Backend Development",
+        "level": "Intermediate",
+        "duration": "12h 20m",
+        "students": 4100,
+        "rating": "4.7",
+        "reviewsCount": 1300,
+        "price": "$399",
+        "hasDiscount": true,
+        "discountedPrice": "$140",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+        "lessons": 50,
+        "courseIncludes": [
+          "12 hours on-demand video",
+          "10 articles",
+          "5 downloadable assets",
+          "Full lifetime access"
+        ],
+        "Description": "Master the skills required to create secure, efficient, and scalable APIs in Node.js using Express.",
+        "learn": [
+          "Creating RESTful endpoints",
+          "Middleware patterns",
+          "JWT authentication",
+          "Connecting to MongoDB",
+          "API security and validation"
+        ],
+        "courseContent": {
+          "lectures": [
+            {
+              "Get Started": [
+                {
+                  "title": "Introduction to Node.js",
+                  "lesson": 1,
+                  "duration": "10:15"
+                },
+                {
+                  "title": "Setting Up Express",
+                  "lesson": 2,
+                  "duration": "12:40"
+                }
+              ]
+            }
+          ],
+          "duration": "12 hours 20 minutes"
+        },
+        "requirements": [
+          "JavaScript fundamentals",
+          "Basic understanding of HTTP"
+        ],
+        "courseReview": [
+          {
+            "name": "Chloe Tan",
+            "coment": "Clear explanations, practical projects — really helped me land a backend job.",
+            "rating": "5",
+            "ago": "4 months"
+          }
+        ],
+        "faqs": []
+      }
+  ]
