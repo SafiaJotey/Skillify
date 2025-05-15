@@ -41,7 +41,7 @@ export default function Categories() {
                 <h3 className="text-xl font-semibold text-neutral-800">{category.name}</h3>
               </div>
               <p className="text-neutral-500 mb-4">Explore {category.courseCount} courses in this category</p>
-              <button className="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-300">
+              <button aria-label='view Courses' className="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-300">
                 View Courses
               </button>
             </div>
@@ -50,7 +50,7 @@ export default function Categories() {
       </div>
       
       <div className="mt-10 text-center">
-        <button className="px-6 py-3 border-2 border-primary-500 text-primary-500 font-medium rounded-md hover:bg-primary-50 transition-colors duration-300">
+        <button aria-label='view Categories' className="px-6 py-3 border-2 border-primary-500 text-primary-500 font-medium rounded-md hover:bg-primary-50 transition-colors duration-300">
           View All Categories
         </button>
       </div>

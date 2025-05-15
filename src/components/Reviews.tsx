@@ -172,6 +172,7 @@ const ReviewSection = () => {
             {reviews.map((_, index) => (
               <button
                 key={index}
+                
                 onClick={() => {
                   setDirection(index > currentReview ? 1 : -1);
                   setCurrentReview(index);

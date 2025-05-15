@@ -81,7 +81,7 @@ const Footer = () => {
           {/* Logo and description */}
           <motion.div variants={item} className="space-y-6">
             <div className="flex items-center">
-               <a href="/" className="flex items-center">
+               <a href="/" className="flex items-center" aria-label="logo">
                             <div className='w-[150px]'>
                               <img src={logo} alt="" />
                             </div>
@@ -127,7 +127,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="flex items-center text-neutral-400 hover:text-primary-400 transition-colors">
+                  <a href="#" className="flex items-center text-neutral-400 hover:text-primary-400 transition-colors" aria-label={`nav-${link?.text}`}>
                     {link.icon}
                     {link.text}
                   </a>
@@ -152,7 +152,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="flex items-center text-neutral-400 hover:text-primary-400 transition-colors">
+                  <a href="#" className="flex items-center text-neutral-400 hover:text-primary-400 transition-colors" aria-label={`course-${course?.text}`}>
                     {course.icon}
                     {course.text}
                   </a>
@@ -200,9 +200,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Skillify by Safia Ahmed. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Cookies</a>
+            <a aria-label="Privacy Policy" href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Privacy Policy</a>
+            <a aria-label="Terms of Service"  href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Terms of Service</a>
+            <a aria-label="Cookies"  href="#" className="text-neutral-500 hover:text-primary-400 text-sm transition-colors">Cookies</a>
           </div>
         </motion.div>
       </div>

@@ -145,7 +145,7 @@ const CourseDetailsPage = () => {
   };
   const location = useLocation();
   const courseItem = location.state?.course;
-console,console.log(courseItem);
+console.log("course",courseItem,location.state);
 
   return (
     <div className="min-h-screen bg-neutral-50">

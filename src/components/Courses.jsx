@@ -402,12 +402,12 @@ export default function Courses() {
                   </span>
                 </div>
                 
-                <button className="w-full flex items-center justify-between group"  onClick={()=>courseDetails(course?.id)}> 
+                {/* <button className="w-full flex items-center justify-between group"  onClick={()=>courseDetails(course?.id)}> 
                   <span className="font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
                     View Course
                   </span>
                   <ChevronRight className="w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))}

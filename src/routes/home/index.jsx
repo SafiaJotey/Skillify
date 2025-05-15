@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp, FileText, Video, Target, BarChart2, Clock1, CheckCircle, ChevronLeft } from "lucide-react";
 import banner from "../../assets/banner_high_res.png"
 import samsung_logo from "../../assets/samsung_logo.svg"
@@ -10,14 +10,15 @@ import hewlett_packard_enterprise_logo from "../../assets/hewlett_packard_enterp
 import procter_gamble_logo from "../../assets/procter_gamble_logo.svg"
 import vimeo_logo_resized from "../../assets/vimeo_logo_resized.svg"
 import volkswagen_logo from "../../assets/volkswagen_logo.svg"
-import FAQ from "../../components/Faq";
-import Title from "../../components/Title";
 import { useRef, useState } from 'react';
-import ReviewSection from "../../components/Reviews";
-import GetStartedSection from "../../components/GetStartedSection";
-import Courses from "../../components/Courses";
-import Categories from "../../components/Categories";
+
+const Title= lazy (()=>import("../../components/Title"))
+const ReviewSection = lazy(() => import("../../components/Reviews"));
+const GetStartedSection = lazy(() => import("../../components/GetStartedSection"));
+const Courses = lazy(() => import("../../components/Courses"));
+const Categories = lazy(() => import("../../components/Categories"));
 import { useNavigate } from "react-router-dom";
+import LoadingFallback from "../../components/LoadingFallback";
 
 
 const CourseBanner = () => {
@@ -313,12 +314,12 @@ useEffect(() => {
            </motion.div>
 
            <motion.div variants={floatingItem} custom={4} className="flex flex-wrap gap-4">
-             <button onclick={loadCourses} className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
+             <button aria-label='start learning' onclick={loadCourses} className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
                <span>Start Learning</span>
                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
              </button>
              
-             <button className="group flex items-center px-7 py-4 bg-transparent border-2 border-neutral-700 hover:border-neutral-600 rounded-xl font-semibold text-white hover:bg-neutral-800/50 transition-all">
+             <button aria-label='watch demo' className="group flex items-center px-7 py-4 bg-transparent border-2 border-neutral-700 hover:border-neutral-600 rounded-xl font-semibold text-white hover:bg-neutral-800/50 transition-all">
                <Play className="mr-2 group-hover:fill-current" size={18} />
                Watch Demo
              </button>
@@ -567,11 +568,14 @@ useEffect(() => {
       viewport={{ once: true, margin: "-100px" }}
       variants={container}
     >
-     <Title 
+      <Suspense fallback={LoadingFallback}>
+
+        <Title 
   heading={{ text: "Our Partners", focus: "Worldwide" }}
   subHeading="Trusted by over 16,000 companies and millions of learners"
 
-/>
+/></Suspense>
+
 
       <motion.div 
         className="flex flex-wrap justify-center gap-8 md:gap-4 items-center w-full"
@@ -596,17 +600,22 @@ useEffect(() => {
     </motion.div>
  
 
-
-<Courses/>
-
-
+<Suspense fallback={LoadingFallback}>
+<Courses/></Suspense>
 
 
 
-
+<Suspense fallback={LoadingFallback}>
 
 <Categories/>
-    <ReviewSection/>
+
+</Suspense>
+<Suspense fallback={LoadingFallback}>
+
+    <ReviewSection/></Suspense>
+
+
+
 
 
     <section className="py-16 px-4 bg-neutral-50">
@@ -677,7 +686,7 @@ useEffect(() => {
                 <p className="text-white/90 mb-6">
                   Join thousands of learners who've transformed their careers through our goal-driven approach to education.
                 </p>
-                <button className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-neutral-100 transition-colors">
+                <button aria-label='learning path' className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-neutral-100 transition-colors">
                   Explore Learning Paths
                 </button>
               </div>
@@ -705,7 +714,7 @@ useEffect(() => {
       </div>
     </section>
 
-<GetStartedSection/>
+<Suspense fallback={LoadingFallback}><GetStartedSection/></Suspense>
 
     <div className="bg-neutral-100 py-16 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -741,7 +750,7 @@ useEffect(() => {
               </a>
               <p className="text-neutral-500">4,415,930 learners</p>
             </div>
-            <button className="group flex items-center px-4 py-2 bg-transparent border-2 border-primary-500 hover:border-primary-600 font-semibold text-primary transition-all duration-300 my-8 hover:bg-primary-50 rounded-md">
+            <button aria-label='trending Course' className="group flex items-center px-4 py-2 bg-transparent border-2 border-primary-500 hover:border-primary-600 font-semibold text-primary transition-all duration-300 my-8 hover:bg-primary-50 rounded-md">
               Show All Trending courses <TrendingUp className="text-primary-400 mx-2 group-hover:translate-x-1 transition-transform duration-300"/>
             </button>
           </motion.div>
@@ -832,7 +841,7 @@ useEffect(() => {
                   </div>
                 </div>
                 
-                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <button aria-label='start learning' className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <span>Start Learning</span>
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
                 </button>
@@ -868,7 +877,7 @@ useEffect(() => {
                   </div>
                 </div>
                 
-                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <button aria-label='learn more' className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <span>Learn More</span>
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
                 </button>
@@ -904,7 +913,7 @@ useEffect(() => {
                   </div>
                 </div>
                 
-                <button className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <button aria-label='vGet Started' className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <span>Get Started</span>
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
                 </button>
@@ -923,6 +932,7 @@ useEffect(() => {
           {/* Slider Navigation */}
           <div className="flex justify-start mt-8 space-x-4">
             <button 
+               aria-label="slider-prev "
               onClick={goToPrevSlide}
               className="slider-prev px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
@@ -941,6 +951,7 @@ useEffect(() => {
             
             <button 
               onClick={goToNextSlide}
+              aria-label="slider-next"
               className="slider-next px-4 py-2 text-primary rounded hover:bg-primary-50 transition-colors duration-300"
             >
            <ChevronRight />

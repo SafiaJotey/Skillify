@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { courseService } from './courses.api';
 
 export default function CoursesPage() {
@@ -10,6 +10,7 @@ export default function CoursesPage() {
   const navigate = useNavigate();
 
   const courseDetails = (course) => {
+  
     navigate(`/courseDetails/${course?.id}`,{  state: { course }});
   };
 
@@ -135,31 +136,31 @@ export default function CoursesPage() {
           className="mt-10 flex justify-center"
         >
           <nav className="inline-flex rounded-md shadow">
-            <a
+            <a aria-label="Previous" 
               href="#"
               className="px-3 py-2 rounded-l-md border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-dark-600"
             >
               Previous
             </a>
-            <a
+            <a  aria-label="1" 
               href="#"
               className="px-3 py-2 border-t border-b border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 text-primary-600 dark:text-primary-400 hover:bg-neutral-50 dark:hover:bg-dark-600"
             >
               1
             </a>
-            <a
+            <a aria-label="2" 
               href="#"
               className="px-3 py-2 border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-dark-600"
             >
               2
             </a>
-            <a
+            <a aria-label="3" 
               href="#"
               className="px-3 py-2 border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-dark-600"
             >
               3
             </a>
-            <a
+            <a aria-label="Next" 
               href="#"
               className="px-3 py-2 rounded-r-md border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-dark-600"
             >

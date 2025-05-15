@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
 import { BookOpen, ChevronRight, Star, Clock, Users } from 'lucide-react';
-import React from 'react';
-import Reviews from "../../components/Reviews"
-import Courses from '../../components/Courses';
-import Categories from '../../components/Categories';
+import React, { lazy, Suspense } from 'react';
+import LoadingFallback from '../../components/LoadingFallback';
+
+// Lazy-loaded components
+const Courses = lazy(() => import('../../components/Courses'));
+const Reviews = lazy(() => import('../../components/Reviews'));
+const Categories = lazy(() => import('../../components/Categories'));
+
 const Category = () => {
   const categoryName = "Web Development";
   const courseCount = 127;
@@ -37,9 +41,9 @@ const Category = () => {
               transition={{ duration: 0.4 }}
               className="flex justify-center items-center text-sm sm:text-base mb-6 text-neutral-400"
             >
-              <a href="/" className="hover:text-primary-400 transition-colors">Home</a>
+              <a  aria-label="Home" href="/" className="hover:text-primary-400 transition-colors">Home</a>
               <ChevronRight className="w-4 h-4 mx-2" />
-              <a href="/categories" className="hover:text-primary-400 transition-colors">Categories</a>
+              <a aria-label="Categories" href="/categories" className="hover:text-primary-400 transition-colors">Categories</a>
               <ChevronRight className="w-4 h-4 mx-2" />
               <span className="text-primary-400">{categoryName}</span>
             </motion.div>
@@ -143,9 +147,17 @@ const Category = () => {
       </section>
 
 
-<Courses/>
-      <Reviews/>
+<Suspense fallback={<LoadingFallback}>
+  <Courses/>
+</Suspense>
+<Suspense fallback={<LoadingFallback}>
+ <Reviews/>
+</Suspense>
+<Suspense fallback={<LoadingFallback}>
+   
       <Categories/>
+</Suspense>
+  
     </div>
   );
 };
