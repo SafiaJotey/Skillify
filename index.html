@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.webp" />
 
-  <link rel="dns-prefetch" href="https://randomuser.me">
+
  
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,15 @@
     document.head.appendChild(link);
   });
 </script>
-
+ <script defer>
+  // Only preconnect if the resource will be used
+  document.addEventListener('DOMContentLoaded', function() {
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = 'https://randomuser.me';
+    link.crossOrigin = true;
+    document.head.appendChild(link);
+  });
+</script>
   </body>
 </html>
