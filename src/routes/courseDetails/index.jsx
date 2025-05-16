@@ -6,8 +6,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const CourseDetailsPage = () => {
+    const isMobile=useIsMobile()
+        const MotionComponent = isMobile ? 'div' :motion.div   ;
   // Sample course data
   const course = {
     title: "Advanced Animation with Framer Motion",
@@ -145,7 +148,7 @@ const CourseDetailsPage = () => {
   };
   const location = useLocation();
   const courseItem = location.state?.course;
-console.log("course",courseItem,location.state);
+
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -158,7 +161,7 @@ console.log("course",courseItem,location.state);
       >
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
+            <MotionComponent  
               initial={{ x: -50 }}
               animate={{ x: 0 }}
               className="flex flex-col md:flex-row gap-8 items-start"
@@ -205,7 +208,7 @@ console.log("course",courseItem,location.state);
                 </div>
               </div>
               
-              <motion.div 
+              <MotionComponent  
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -239,8 +242,8 @@ console.log("course",courseItem,location.state);
                     </ul>
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </MotionComponent >
+            </MotionComponent >
           </div>
         </div>
       </motion.section>
@@ -252,7 +255,7 @@ console.log("course",courseItem,location.state);
             {/* Left Column - Main Content */}
             <div className="lg:col-span-2 space-y-8">
               {/* Course Description */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -262,10 +265,10 @@ console.log("course",courseItem,location.state);
                 <div className="prose max-w-none text-neutral-700">
                   <p>{ courseItem?.Description}</p>
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* What You'll Learn */}
-              <motion.div 
+              <MotionComponent  
                 variants={container}
                 initial="hidden"
                 animate="show"
@@ -274,20 +277,20 @@ console.log("course",courseItem,location.state);
                 <h2 className="text-2xl font-bold text-dark-800 mb-6">What you'll learn</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {courseItem?.learn.map((highlight, index) => (
-                    <motion.div 
+                    <MotionComponent  
                       key={index} 
                       variants={item}
                       className="flex items-start"
                     >
                       <CheckCircle className="w-5 h-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" />
                       <span>{highlight}</span>
-                    </motion.div>
+                    </MotionComponent >
                   ))}
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* Course Content */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -332,7 +335,7 @@ courseContent
                       </button>
                       
                       {expandedSections[sectionIndex] && (
-                        <motion.div 
+                        <MotionComponent  
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           transition={{ duration: 0.3 }}
@@ -352,15 +355,15 @@ courseContent
                               <span className="text-neutral-500 text-sm">{lecture.duration}</span>
                             </div>
                           ))}
-                        </motion.div>
+                        </MotionComponent >
                       )}
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* Requirements */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -375,10 +378,10 @@ courseContent
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </MotionComponent >
 
               {/* Instructor */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -411,10 +414,10 @@ courseContent
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* Reviews */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -457,10 +460,10 @@ courseContent
                     See all reviews
                   </button>
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* FAQ */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
@@ -488,13 +491,13 @@ courseContent
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </MotionComponent >
             </div>
 
             {/* Right Column - Sidebar */}
             <div className="space-y-6">
               {/* Pricing Card */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
@@ -533,10 +536,10 @@ courseContent
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* Related Courses */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -559,10 +562,10 @@ courseContent
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               {/* Support */}
-              <motion.div 
+              <MotionComponent  
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -592,7 +595,7 @@ courseContent
                     <ChevronDown className="w-5 h-5 text-neutral-500" />
                   </button>
                 </div>
-              </motion.div>
+              </MotionComponent >
             </div>
           </div>
         </div>

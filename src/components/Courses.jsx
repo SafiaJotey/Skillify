@@ -5,18 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 // Sample course images (you would replace these with actual image imports or URLs)
 const courseImages = [
-  'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+  '',
+  
 ];
 
 export default function Courses() {
@@ -45,7 +35,7 @@ export default function Courses() {
         lessons: 35,
         level: "Beginner",
         icon: <FileText className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[1]
+        image:courseImages[0]
       },
       {
         id: 3,
@@ -56,7 +46,7 @@ export default function Courses() {
         lessons: 58,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[2]
+        image: courseImages[0]
       },
       {
         id: 4,
@@ -67,7 +57,7 @@ export default function Courses() {
         lessons: 65,
         level: "Beginner",
         icon: <Camera className="w-5 h-5 text-purple-500" />,
-        image: courseImages[3]
+        image: courseImages[0]
       },
       {
         id: 5,
@@ -78,7 +68,7 @@ export default function Courses() {
         lessons: 72,
         level: "Intermediate",
         icon: <Database className="w-5 h-5 text-blue-500" />,
-        image: courseImages[4]
+        image: courseImages[0]
       },
       {
         id: 6,
@@ -89,7 +79,7 @@ export default function Courses() {
         lessons: 38,
         level: "Beginner",
         icon: <Music className="w-5 h-5 text-pink-500" />,
-        image: courseImages[5]
+        image: courseImages[0]
       },
       {
         id: 7,
@@ -100,7 +90,7 @@ export default function Courses() {
         lessons: 47,
         level: "Intermediate",
         icon: <Paintbrush className="w-5 h-5 text-orange-500" />,
-        image: courseImages[6]
+        image: courseImages[0]
       },
       {
         id: 8,
@@ -111,7 +101,7 @@ export default function Courses() {
         lessons: 28,
         level: "Intermediate",
         icon: <Globe className="w-5 h-5 text-green-500" />,
-        image: courseImages[7]
+        image:courseImages[0]
       },
       {
         id: 9,
@@ -122,7 +112,7 @@ export default function Courses() {
         lessons: 53,
         level: "Beginner",
         icon: <Paintbrush className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[8]
+        image: courseImages[0]
       },
       {
         id: 10,
@@ -133,7 +123,7 @@ export default function Courses() {
         lessons: 68,
         level: "Advanced",
         icon: <Cpu className="w-5 h-5 text-blue-500" />,
-        image: courseImages[9]
+        image: courseImages[0]
       },
       {
         id: 11,
@@ -144,7 +134,7 @@ export default function Courses() {
         lessons: 61,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[10]
+        image:courseImages[0]
       },
       {
         id: 12,
@@ -155,7 +145,7 @@ export default function Courses() {
         lessons: 52,
         level: "Advanced",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[11]
+        image:courseImages[0]
       }
     ],
     development: [
@@ -177,7 +167,7 @@ export default function Courses() {
         lessons: 58,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[2]
+        image: courseImages[0]
       },
       {
         id: 7,
@@ -187,7 +177,7 @@ export default function Courses() {
         lessons: 47,
         level: "Intermediate",
         icon: <Paintbrush className="w-5 h-5 text-orange-500" />,
-        image: courseImages[6]
+        image: courseImages[0]
       },
       {
         id: 8,
@@ -197,7 +187,7 @@ export default function Courses() {
         lessons: 28,
         level: "Intermediate",
         icon: <Globe className="w-5 h-5 text-green-500" />,
-        image: courseImages[7]
+        image: courseImages[0]
       },
       {
         id: 11,
@@ -207,7 +197,7 @@ export default function Courses() {
         lessons: 61,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[10]
+        image: courseImages[0]
       },
       {
         id: 12,
@@ -217,7 +207,7 @@ export default function Courses() {
         lessons: 52,
         level: "Advanced",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[11]
+        image: courseImages[0]
       }
     ],
     design: [
@@ -229,7 +219,7 @@ export default function Courses() {
         lessons: 35,
         level: "Beginner",
         icon: <FileText className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[1]
+        image:courseImages[0]
       },
       {
         id: 9,
@@ -239,7 +229,7 @@ export default function Courses() {
         lessons: 53,
         level: "Beginner",
         icon: <Paintbrush className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[8]
+        image: courseImages[0]
       }
     ],
     photography: [
@@ -251,7 +241,7 @@ export default function Courses() {
         lessons: 65,
         level: "Beginner",
         icon: <Camera className="w-5 h-5 text-purple-500" />,
-        image: courseImages[3]
+        image:courseImages[0]
       }
     ],
     data: [
@@ -263,7 +253,7 @@ export default function Courses() {
         lessons: 72,
         level: "Intermediate",
         icon: <Database className="w-5 h-5 text-blue-500" />,
-        image: courseImages[4]
+        image:courseImages[0]
       },
      
       {
@@ -274,7 +264,7 @@ export default function Courses() {
         lessons: 68,
         level: "Advanced",
         icon: <Cpu className="w-5 h-5 text-blue-500" />,
-        image: courseImages[9]
+        image: courseImages[0]
       }
     ],
     music: [
@@ -286,7 +276,7 @@ export default function Courses() {
         lessons: 38,
         level: "Beginner",
         icon: <Music className="w-5 h-5 text-pink-500" />,
-        image: courseImages[5]
+        image:courseImages[0]
       }
     ]
   };
@@ -372,11 +362,15 @@ export default function Courses() {
               className="bg-white rounded-xl border border-neutral-200 overflow-hidden transition-all"
             >
               <div className="h-40 overflow-hidden">
-                <img 
-                  src={course.image} 
+               
+                <img
+
+ src={course.image} 
                   alt={course.title}
-                  className="w-full h-full object-cover"
-                />
+        className="w-full h-full object-cover"
+  loading="eager" decoding="async"
+  fetchpriority="low" 
+/>
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">

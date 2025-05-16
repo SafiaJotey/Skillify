@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 export default function NotFoundPage() {
+    const isMobile=useIsMobile()
+    const MotionComponent = isMobile ? 'div' :motion.div  ;
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-50 dark:bg-dark-900 text-center p-6">
       <motion.h1
@@ -29,7 +32,7 @@ export default function NotFoundPage() {
       >
         The page you’re looking for doesn’t exist. It might have been moved or deleted.
       </motion.p>
-      <motion.div
+      <MotionComponent 
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -39,7 +42,7 @@ export default function NotFoundPage() {
         >
           Back to Home
         </Link>
-      </motion.div>
+      </MotionComponent >
     </div>
   );
 }

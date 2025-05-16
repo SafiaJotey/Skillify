@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, ChevronRight, Star, Clock, Users } from 'lucide-react';
 import React, { lazy, Suspense } from 'react';
 import LoadingFallback from '../../components/LoadingFallback';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 // Lazy-loaded components
 const Courses = lazy(() => import('../../components/Courses'));
@@ -13,19 +14,20 @@ const Category = () => {
   const courseCount = 127;
   const enrolledStudents = "45K+";
   const averageRating = 4.7;
-
+   const isMobile=useIsMobile()
+      const MotionComponent = isMobile ? 'div' :motion.div   ;
   return (
     <div className="bg-dark-900">
       {/* Category Banner Section */}
       <section className="relative bg-dark-800 overflow-hidden">
         {/* Animated background elements */}
-        <motion.div
+        <MotionComponent 
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
           className="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-primary-500 blur-3xl"
         />
-        <motion.div
+        <MotionComponent 
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.1 }}
           transition={{ duration: 1.5, delay: 0.6 }}
@@ -35,7 +37,7 @@ const Category = () => {
         <div className="container mx-auto px-4 py-16 sm:py-20 md:py-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Breadcrumb navigation */}
-            <motion.div
+            <MotionComponent 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
@@ -46,7 +48,7 @@ const Category = () => {
               <a aria-label="Categories" href="/categories" className="hover:text-primary-400 transition-colors">Categories</a>
               <ChevronRight className="w-4 h-4 mx-2" />
               <span className="text-primary-400">{categoryName}</span>
-            </motion.div>
+            </MotionComponent >
 
             {/* Main heading */}
             <motion.h1
@@ -69,7 +71,7 @@ const Category = () => {
             </motion.p>
 
             {/* Stats */}
-            <motion.div
+            <MotionComponent 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -93,7 +95,7 @@ const Category = () => {
                   <span className="text-primary-400 font-medium">{averageRating}</span> Avg Rating
                 </span>
               </div>
-            </motion.div>
+            </MotionComponent >
 
             {/* CTA Button */}
             <motion.button
@@ -107,7 +109,7 @@ const Category = () => {
         </div>
 
         {/* Animated gradient border bottom */}
-        <motion.div
+        <MotionComponent 
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
@@ -147,13 +149,14 @@ const Category = () => {
       </section>
 
 
-<Suspense fallback={<LoadingFallback}>
+<Suspense fallback={<LoadingFallback/>}>
   <Courses/>
 </Suspense>
-<Suspense fallback={<LoadingFallback}>
+<Suspense fallback={<LoadingFallback/>}>
  <Reviews/>
 </Suspense>
-<Suspense fallback={<LoadingFallback}>
+
+<Suspense fallback={<LoadingFallback/>}>
    
       <Categories/>
 </Suspense>

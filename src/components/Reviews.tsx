@@ -121,6 +121,7 @@ const ReviewSection = () => {
                       src={reviews[currentReview].avatar} 
                       alt={reviews[currentReview].name}
                       className="w-full h-full object-cover"
+                      loading="eager" decoding="async" 
                     />
                   </motion.div>
                 </div>

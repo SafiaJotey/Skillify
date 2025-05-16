@@ -2,12 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.webp" />
+
+  <link rel="dns-prefetch" href="https://st2.depositphotos.com">
+  <link rel="dns-prefetch" href="https://randomuser.me">
+  <link rel="dns-prefetch" href="https://cms-images.udemycdn.com">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Author:Safia Ahmed,
+    Build production-ready applications with our interactive, project-based courses taught by industry experts.">
     <title>Skillify</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.jsx" defer></script>
+    <script defer>
+  // Only preconnect if the resource will be used
+  document.addEventListener('DOMContentLoaded', function() {
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = 'https://img.freepik.com';
+    link.crossOrigin = true;
+    document.head.appendChild(link);
+  });
+</script>
+   <script defer>
+  // Only preconnect if the resource will be used
+  document.addEventListener('DOMContentLoaded', function() {
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = 'https://i.pravatar.cc';
+    link.crossOrigin = true;
+    document.head.appendChild(link);
+  });
+</script>
+ <script defer>
+  // Only preconnect if the resource will be used
+  document.addEventListener('DOMContentLoaded', function() {
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = 'https://unsplash.com/';
+    link.crossOrigin = true;
+    document.head.appendChild(link);
+  });
+</script>
   </body>
 </html>

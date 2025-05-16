@@ -19,7 +19,7 @@
       "price": "$435",
       "hasDiscount": true,
       "discountedPrice": "$124",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 68,
       "courseIncludes": [
         "28 hours on-demand video",
@@ -96,7 +96,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-      "image": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 185,
       "courseIncludes": [
         "22 hours on-demand video",
@@ -166,7 +166,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 320,
       "courseIncludes": [
         "69 hours on-demand video",
@@ -235,7 +235,7 @@
       "price": "$399",
       "hasDiscount": true,
       "discountedPrice": "$39.99",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 280,
       "courseIncludes": [
         "44 hours on-demand video",
@@ -303,7 +303,7 @@
       "price": "$249",
       "hasDiscount": true,
       "discountedPrice": "$24.99",
-      "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 150,
       "courseIncludes": [
         "28 hours on-demand video",
@@ -372,7 +372,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 180,
       "courseIncludes": [
         "23 hours on-demand video",
@@ -441,7 +441,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-      "image": "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 220,
       "courseIncludes": [
         "52 hours on-demand video",
@@ -510,7 +510,7 @@
       "price": "$249",
       "hasDiscount": true,
       "discountedPrice": "$24.99",
-      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 190,
       "courseIncludes": [
         "32 hours on-demand video",
@@ -579,7 +579,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-      "image": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 210,
       "courseIncludes": [
         "37 hours on-demand video",
@@ -648,7 +648,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+       "image": "",
       "lessons": 120,
       "courseIncludes": [
         "18 hours on-demand video",
@@ -717,7 +717,7 @@
         "price": "$380",
         "hasDiscount": false,
         "discountedPrice": "",
-        "image": "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80",
+        "image": "",
         "lessons": 55,
         "courseIncludes": [
           "10 hours on-demand video",
@@ -786,7 +786,7 @@
         "price": "$420",
         "hasDiscount": true,
         "discountedPrice": "$149",
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+         "image": "",
         "lessons": 85,
         "courseIncludes": [
           "16 hours on-demand video",
@@ -854,7 +854,7 @@
         "price": "$360",
         "hasDiscount": true,
         "discountedPrice": "$110",
-        "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+         "image": "",
         "lessons": 42,
         "courseIncludes": [
           "9 hours on-demand video",
@@ -923,7 +923,7 @@
         "price": "$299",
         "hasDiscount": false,
         "discountedPrice": "",
-        "image": "https://images.unsplash.com/photo-1611928484115-5215f8ad13cf?auto=format&fit=crop&w=800&q=80",
+         "image": "",
         "lessons": 35,
         "courseIncludes": [
           "7 hours on-demand video",
@@ -992,7 +992,7 @@
         "price": "$399",
         "hasDiscount": true,
         "discountedPrice": "$140",
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+         "image": "",
         "lessons": 50,
         "courseIncludes": [
           "12 hours on-demand video",

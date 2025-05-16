@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import logo from "../assets/fullLogo.png"
+import logo from "../assets/fullLogo.webp"
 import { useNavigate } from 'react-router-dom';
+import { useIsMobile } from '../hooks/useIsMobile';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -19,7 +20,8 @@ const Navbar = () => {
   const getStart = () => {
     navigate("/auth/login")
   };
-
+ const isMobile=useIsMobile()
+    const MotionComponent = isMobile ? 'div' :motion.div  ;
   
   const navItems = [
     { name: 'Home', href: '/' },
@@ -51,17 +53,17 @@ const Navbar = () => {
       <div className="box mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <motion.div 
+          <MotionComponent  
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0 flex items-center"
           >
             <a href="/" className="flex items-center" aria-label="logo" >
               <div className='w-[150px]'>
-                <img src={logo} alt="" />
+                <img src={logo} alt="skillify logo" loading="eager" decoding="async" fetchpriority="high"   className="w-full h-full object-cover"/>
               </div>
            
             </a>
-          </motion.div>
+          </MotionComponent >
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -84,7 +86,7 @@ const Navbar = () => {
 
                     <AnimatePresence>
                       {dropdownOpen === index && (
-                        <motion.div
+                        <MotionComponent 
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
@@ -100,7 +102,7 @@ const Navbar = () => {
                               {subItem.name}
                             </a>
                           ))}
-                        </motion.div>
+                        </MotionComponent >
                       )}
                     </AnimatePresence>
                   </div>
@@ -133,9 +135,9 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
-aria-label='menu-bar'
+aria-label='hamburger'
 onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white-700 hover:text-primary focus:outline-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -150,7 +152,7 @@ onClick={() => setIsOpen(!isOpen)}
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <MotionComponent 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -191,7 +193,7 @@ onClick={() => setIsOpen(!isOpen)}
                 </motion.button>
               </div>
             </div>
-          </motion.div>
+          </MotionComponent >
         )}
       </AnimatePresence>
     </motion.nav>

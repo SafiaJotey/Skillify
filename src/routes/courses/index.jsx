@@ -2,13 +2,15 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import { courseService } from './courses.api';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 export default function CoursesPage() {
   const [loading, setLoading] = useState(false);
   const [courseList, setCourseList] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+ const isMobile=useIsMobile()
+        const MotionComponent = isMobile ? 'div' :motion.div  ;
   const courseDetails = (course) => {
   
     navigate(`/courseDetails/${course?.id}`,{  state: { course }});
@@ -45,24 +47,24 @@ export default function CoursesPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
         {/* Search and Filter */}
-        <motion.div
+        <MotionComponent 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="mb-8"
         >
           {/* ... existing search and filter code ... */}
-        </motion.div>
+        </MotionComponent >
 
         {/* Courses Grid */}
-        <motion.div
+        <MotionComponent 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {courseList?.map((course, index) => (
-           <motion.div
+           <MotionComponent 
            key={course.id || index}
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -75,6 +77,7 @@ export default function CoursesPage() {
                src={course.image}
                alt={course.title}
                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+               loading="eager" decoding="async" fetchpriority="high" 
              />
              <div className="absolute top-2 right-2 bg-primary-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                {course.level}
@@ -125,11 +128,11 @@ export default function CoursesPage() {
                Enroll Now
              </motion.button>
            </div>
-         </motion.div>
+         </MotionComponent >
           ))}
-        </motion.div>
+        </MotionComponent >
         {/* Pagination */}
-        <motion.div
+        <MotionComponent 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
@@ -167,7 +170,7 @@ export default function CoursesPage() {
               Next
             </a>
           </nav>
-        </motion.div>
+        </MotionComponent >
       </main>
     </div>
   );

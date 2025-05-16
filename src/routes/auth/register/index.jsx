@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '../../../hooks/useIsMobile';
 
 export default function RegisterPage() {
+   const isMobile=useIsMobile()
+      const MotionComponent = isMobile ? 'div' :motion.div  ;
   return (
     <div className="min-h-screen flex items-center justify-center bg-neutral-100 dark:bg-dark-900 p-4">
-      <motion.div
+      <MotionComponent 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -18,7 +21,7 @@ export default function RegisterPage() {
           {/* Left side - Form */}
           <div className="flex-1">
             <div className="flex flex-col items-start mb-6">
-              <motion.div
+              <MotionComponent 
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: 'spring', stiffness: 150 }}
@@ -27,7 +30,7 @@ export default function RegisterPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
-              </motion.div>
+              </MotionComponent >
               <motion.h2
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -48,7 +51,7 @@ export default function RegisterPage() {
 
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <motion.div
+                <MotionComponent 
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
@@ -59,8 +62,8 @@ export default function RegisterPage() {
                     className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
                     placeholder="John"
                   />
-                </motion.div>
-                <motion.div
+                </MotionComponent >
+                <MotionComponent 
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
@@ -71,10 +74,10 @@ export default function RegisterPage() {
                     className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
                     placeholder="Doe"
                   />
-                </motion.div>
+                </MotionComponent >
               </div>
 
-              <motion.div
+              <MotionComponent 
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7 }}
@@ -85,10 +88,10 @@ export default function RegisterPage() {
                   className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
                   placeholder="you@example.com"
                 />
-              </motion.div>
+              </MotionComponent >
 
               <div className="grid grid-cols-2 gap-4">
-                <motion.div
+                <MotionComponent 
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 }}
@@ -99,8 +102,8 @@ export default function RegisterPage() {
                     className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
                     placeholder="••••••••"
                   />
-                </motion.div>
-                <motion.div
+                </MotionComponent >
+                <MotionComponent 
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.9 }}
@@ -111,10 +114,10 @@ export default function RegisterPage() {
                     className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-dark-700 bg-white dark:bg-dark-700 focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
                     placeholder="••••••••"
                   />
-                </motion.div>
+                </MotionComponent >
               </div>
 
-              <motion.div
+              <MotionComponent 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.0 }}
@@ -133,7 +136,7 @@ export default function RegisterPage() {
                     I agree to the <a href="#" className="text-primary-500 hover:text-primary-600 hover:underline">Terms</a> and <a href="#" className="text-primary-500 hover:text-primary-600 hover:underline">Privacy Policy</a>
                   </label>
                 </div>
-              </motion.div>
+              </MotionComponent >
 
               <motion.button
                 whileHover={{ scale: 1.02, backgroundColor: '#0891b2' }}
@@ -163,7 +166,7 @@ export default function RegisterPage() {
           {/* Right side - Visual/Info */}
           <div className="hidden md:flex flex-1 flex-col justify-center items-center bg-neutral-50 dark:bg-dark-700 rounded-xl p-6">
             <div className="max-w-xs">
-              <motion.div
+              <MotionComponent 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -176,9 +179,9 @@ export default function RegisterPage() {
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   Become part of Skillify and unlock access to exclusive content, personalized recommendations, and more.
                 </p>
-              </motion.div>
+              </MotionComponent >
               
-              <motion.div
+              <MotionComponent 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
@@ -217,11 +220,11 @@ export default function RegisterPage() {
                     </svg>
                   </motion.button>
                 </div>
-              </motion.div>
+              </MotionComponent >
             </div>
           </div>
         </div>
-      </motion.div>
+      </MotionComponent >
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import logo from "../assets/fullLogo.png"
+import logo from "../assets/fullLogo.webp"
 import { 
   Github, Twitter, Linkedin, Mail, 
   Zap, Code, ShieldCheck, Rocket, 
@@ -83,7 +83,7 @@ const Footer = () => {
             <div className="flex items-center">
                <a href="/" className="flex items-center" aria-label="logo">
                             <div className='w-[150px]'>
-                              <img src={logo} alt="" />
+                              <img src={logo} alt="skillify logo" loading="eager" decoding="async" fetchpriority="high"  className="w-full h-full object-cover" />
                             </div>
                          
                           </a>

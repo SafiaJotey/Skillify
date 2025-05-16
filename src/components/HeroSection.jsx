@@ -1,13 +1,16 @@
+import { Play, ArrowRight, Code,  Award,  Users, Clock, BookOpen, Zap,Trophy} from "lucide-react";
+import { useIsMobile } from "../hooks/useIsMobile";
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import banner from "../assets/banner_high_res.png"
-import { ArrowRight, Award, BookOpen, Clock, Code, Play, Trophy, Users, Zap } from 'lucide-react';
-export default function Banner() {
-    const navigate=useNavigate()
-      const loadCourses = () => {
-    navigate("/courses")
-  };
-  const staggerContainer = {
+import { useNavigate } from "react-router-dom";
+import banner from "../assets/banner.webp"
+import useMotion from "../hooks/useMotion";
+import React from "react";
+function HeroSection() {
+            const isMobile=useIsMobile()
+       const motionComponents=useMotion()
+
+const navigate=useNavigate()
+            const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -31,13 +34,16 @@ export default function Banner() {
       }
     })
   };
+  const loadCourses = () => {
+    navigate("/courses")
+  };
 
   return (
-    <div className="relative bg-dark-800 overflow-hidden h-screen py-36 flex items-center">
+     <div className="relative bg-dark-800 overflow-hidden h-screen py-36 flex items-center">
    {/* Animated grid background */}
    <div className="absolute inset-0 overflow-hidden opacity-20">
      {[...Array(80)].map((_, i) => (
-       <motion.div
+       <motionComponents.div 
          key={i}
       
        />
@@ -45,7 +51,7 @@ export default function Banner() {
    </div>
 
    {/* Floating particles */}
-   {[...Array(100)].map((_, i) => {
+   {[...Array(isMobile?20:100)].map((_, i) => {
      const colors = [
        "from-primary-400 to-secondary-500",
        "from-secondary-500 to-primary-600",
@@ -55,7 +61,7 @@ export default function Banner() {
      const randomColor = colors[Math.floor(Math.random() * colors.length)];
      
      return (
-       <motion.div
+       <motionComponents.div 
          key={i}
          custom={i}
          initial={{ opacity: 0 }}
@@ -89,19 +95,19 @@ export default function Banner() {
      <div className="grid lg:grid-cols-2 gap-12 items-center">
        {/* Left side */}
        <div className="">
-         <motion.div
+         <motionComponents.div 
            initial="hidden"
            animate="visible"
            variants={staggerContainer}
          >
-           <motion.div variants={floatingItem} custom={0} className="mb-6">
+           <motionComponents.div  variants={floatingItem} custom={0} className="mb-6">
              <span className="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-wider text-primary-100 uppercase bg-dark-700/50 rounded-full border border-primary-500/30">
                <Zap className="mr-2 w-4 h-4 fill-primary-400 text-primary-400" />
                New Courses Available
              </span>
-           </motion.div>
+           </motionComponents.div >
 
-           <motion.h1 
+           <motionComponents.h1 
              variants={floatingItem} 
              custom={1}
              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
@@ -110,33 +116,47 @@ export default function Banner() {
                Master Skills
              </span>{" "}
              Like a Pro Developer
-           </motion.h1>
-
-           <motion.p 
+           </motionComponents.h1>
+<div className="h-[200px]">
+    <motionComponents.p 
              variants={floatingItem} 
              custom={2}
              className="text-xl text-neutral-300 mb-8 max-w-lg leading-relaxed"
            >
              Build <span className="font-semibold text-primary-300">production-ready</span> applications with our interactive, project-based courses taught by industry experts.
-           </motion.p>
+           </motionComponents.p>
 
+</div>
+           
            {/* Stats */}
-           <motion.div 
+           <motionComponents.div  
              variants={floatingItem} 
              custom={3}
              className="flex flex-wrap gap-6 mb-8"
            >
              <div className="flex items-center">
                <div className="flex -space-x-2 mr-3">
-                 {[...Array(3)].map((_, i) => (
-                   <img 
-                     key={i}
-                     src={`https://i.pravatar.cc/150?img=${i + 10}`}
-                     className="w-8 h-8 rounded-full border-2 border-dark-800"
-                     alt="Student"
-                   />
-                 ))}
-               </div>
+  <div className="avatar-stack flex">
+    {[...Array(3)].map((_, i) => (
+      <div 
+        key={i}
+        className="avatar-mask"
+        
+        style={{ 
+          backgroundImage: `url(https://i.pravatar.cc/80?img=${i + 10})`,
+          zIndex: 3 - i,
+          width: "32px",
+    height: "32px",
+    borderRadius: "50%",
+    border:"2px solid #1a202c",
+    backgroundSize: "cover",
+    position: "relative"
+        }}
+        aria-hidden="true"
+      />
+    ))}
+  </div>
+</div>
                <div>
                  <div className="text-white font-semibold">10,000+ Students</div>
                  <div className="text-xs text-neutral-400">Already learning</div>
@@ -151,31 +171,31 @@ export default function Banner() {
                  <div className="text-xs text-neutral-400">Industry-recognized</div>
                </div>
              </div>
-           </motion.div>
+           </motionComponents.div >
 
-           <motion.div variants={floatingItem} custom={4} className="flex flex-wrap gap-4">
-             <button onclick={loadCourses} className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
+           <motionComponents.div  variants={floatingItem} custom={4} className="flex flex-wrap gap-4">
+             <button aria-label='start learning' onclick={loadCourses} className="group flex items-center px-7 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 rounded-xl font-semibold text-white transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50">
                <span>Start Learning</span>
                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
              </button>
              
-             <button className="group flex items-center px-7 py-4 bg-transparent border-2 border-neutral-700 hover:border-neutral-600 rounded-xl font-semibold text-white hover:bg-neutral-800/50 transition-all">
+             <button aria-label='watch demo' className="group flex items-center px-7 py-4 bg-transparent border-2 border-neutral-700 hover:border-neutral-600 rounded-xl font-semibold text-white hover:bg-neutral-800/50 transition-all">
                <Play className="mr-2 group-hover:fill-current" size={18} />
                Watch Demo
              </button>
-           </motion.div>
-         </motion.div>
+           </motionComponents.div >
+         </motionComponents.div >
        </div>
 
        {/* Right side */}
        <div className="relative hidden lg:block h-[500px]">
-<motion.div 
+<motionComponents.div  
  initial="hidden"
  animate="visible"
  className="absolute top-0 right-0 w-full h-full"
 >
  {/* Main feature card */}
- <motion.div
+ <motionComponents.div 
    variants={{
      hidden: { opacity: 0, y: 20, rotateY: 10 },
      visible: { 
@@ -191,7 +211,7 @@ export default function Banner() {
      transition: { duration: 0.3 }
    }}
  >
-  <motion.div
+  <motionComponents.div 
      animate={{
        y: [0, -10, 0],
        transition: {
@@ -202,11 +222,11 @@ export default function Banner() {
        }
      }}
    >
-     <img src={banner} alt="Website Benefits" className="w-full"/>
-   </motion.div>
- </motion.div>
+     <img src={banner} alt="Website Benefits"  className="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+   </motionComponents.div >
+ </motionComponents.div >
 {/* Progress rings */}
-<motion.div 
+{!isMobile&& <motionComponents.div  
   initial={{ scale: 0, opacity: 0 }}
   animate={{ scale: 1, opacity: 1 }}
   transition={{ delay: 1.5, duration: 0.8 }}
@@ -266,7 +286,7 @@ export default function Banner() {
     </defs>
   </svg>
   <div className="absolute inset-0 flex items-center justify-center flex-col">
-    <motion.div
+    <motionComponents.div 
       animate={{
         y: [0, -5, 0],
         transition: {
@@ -284,12 +304,12 @@ export default function Banner() {
       }}
     >
       <Trophy className="w-8 h-8 text-primary-500 hover:text-primary-400 mb-4" />
-    </motion.div>
+    </motionComponents.div >
 
     <span className="text-neutral-400 text-xs">Certificate On</span>
     <span className="text-neutral-400 text-xs mt-1 block">Course Completion</span>
   </div>
-</motion.div>
+</motionComponents.div >}
         
  {/* Key Benefits Section - Consistent Card Styling */}
  {[
@@ -319,7 +339,7 @@ export default function Banner() {
      icon: <Zap size={16} />
    }
  ].map((benefit, i) => (
-   <motion.div
+   <motionComponents.div 
      key={i}
      initial={{ 
        x: i % 2 ? -200 : 200,
@@ -348,10 +368,10 @@ export default function Banner() {
      className={`absolute border-primary-500/30 bg-primary-500/10 backdrop-blur-sm border rounded-xl p-4 z-10`}
      style={{
        width: "200px",
-       height: "80px" 
+       height: "80px" // Consistent height for all cards
      }}
    >
-     <motion.div
+     <motionComponents.div 
        animate={{
          y: [0, -10, 0],
          transition: {
@@ -363,23 +383,23 @@ export default function Banner() {
        }}
      >
        <div className="flex items-start gap-3 h-full">
-         <motion.div 
+         <motionComponents.div  
            className={`p-2 rounded-lg text-primary-400 bg-white/5`}
            whileHover={{ scale: 1.1 }}
          >
            {benefit.icon}
-         </motion.div>
+         </motionComponents.div >
          <div className="flex-1">
            <h4 className="font-medium text-white text-sm">{benefit.title}</h4>
            <p className="text-xs text-neutral-400">{benefit.description}</p>
          </div>
        </div>
-     </motion.div>
-   </motion.div>
+     </motionComponents.div >
+   </motionComponents.div >
  ))}
 
  {/* Featured Badge */}
- <motion.div 
+ <motionComponents.div  
    className="absolute top-0 -left-16 bg-gradient-to-r from-primary-500 to-primary-700 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg"
    initial={{ opacity: 0, y: 20 }}
    animate={{ 
@@ -394,8 +414,8 @@ export default function Banner() {
    }}
  >
    Trusted by Thousands 
- </motion.div>
-</motion.div>
+ </motionComponents.div >
+</motionComponents.div >
 
 </div>
      </div>
@@ -403,3 +423,4 @@ export default function Banner() {
  </div>
   )
 }
+export default React.memo(HeroSection)
