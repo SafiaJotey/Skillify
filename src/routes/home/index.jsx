@@ -466,7 +466,7 @@ useEffect(() => {
               
               <div className="flex items-center justify-center">
                 <img 
-                  src="https://cms-images.udemycdn.com/content/c4gpjcmcsk/png/UB_Case_Studies_Booz_Allen_image.png?position=c&quality=80&x.app=portals" 
+                  src="" 
                   alt="Booz Allen Hamilton" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
@@ -502,7 +502,7 @@ useEffect(() => {
               
               <div className="flex items-center justify-center">
                 <img 
-                  src="https://st2.depositphotos.com/20363444/47416/i/450/depositphotos_474164570-stock-photo-cheerful-businessman-holding-laptop-african.jpg" 
+                  src="" 
                   alt="Tech Company" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
@@ -538,7 +538,7 @@ useEffect(() => {
               
               <div className="flex items-center justify-center">
                 <img 
-                  src="https://img.freepik.com/free-photo/middle-aged-hispanic-business-people_23-2151098612.jpg?semt=ais_hybrid&w=740" 
+                  src="" 
                   alt="Finance Corp" 
                   className="max-h-80 object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
                 />
