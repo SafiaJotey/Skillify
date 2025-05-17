@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import banner from "../assets/banner.webp"
 import useMotion from "../hooks/useMotion";
-import React, { Suspense } from "react";
-import LoadingFallback from "./LoadingFallback";
+import React from "react";
 function HeroSection() {
             const isMobile=useIsMobile()
        const motionComponents=useMotion()
@@ -95,7 +94,6 @@ const navigate=useNavigate()
    <div className="container mx-auto px-6 relative z-10">
      <div className="grid lg:grid-cols-2 gap-12 items-center">
        {/* Left side */}
-       <Suspense fallback={<LoadingFallback/>}>  
        <div className="">
          <motionComponents.div 
            initial="hidden"
@@ -120,13 +118,13 @@ const navigate=useNavigate()
              Like a Pro Developer
            </motionComponents.h1>
 <div className="h-[170px] ">
- <Suspense fallback={<LoadingFallback/>}>   <motionComponents.p 
+    <motionComponents.p 
              variants={floatingItem} 
              custom={2}
              className="text-xl text-neutral-300 mb-8 max-w-lg "
            >
              Build <span className="font-semibold text-primary-300">production-ready</span> applications with our interactive, project-based courses taught by industry experts.
-           </motionComponents.p></Suspense>
+           </motionComponents.p>
 
 </div>
            
@@ -188,7 +186,7 @@ const navigate=useNavigate()
            </motionComponents.div >
          </motionComponents.div >
        </div>
-</Suspense>
+
        {/* Right side */}
        <div className="relative hidden lg:block h-[500px]">
 <motionComponents.div  
