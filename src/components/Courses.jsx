@@ -391,7 +391,7 @@ export default function Courses() {
                   alt={course.title}
         className="w-full h-full object-cover"
   loading="eager" decoding="async"
-  fetchpriority="low" 
+  fetchpriority="high" 
 />
               </div>
               <div className="p-6">
