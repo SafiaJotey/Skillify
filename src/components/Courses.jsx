@@ -5,29 +5,29 @@ import { useNavigate } from 'react-router-dom';
 
 // Sample course images (you would replace these with actual image imports or URLs)
 const courseImages = [
- "/src/assets/courseImg1.webp",
+ "/images/courseImg1.webp",
   
- "/src/assets/courseImg2.webp",
+ "/images/courseImg2.webp",
   
- "/src/assets/courseImg3.webp",
+ "/images/courseImg3.webp",
   
- "/src/assets/courseImg4.webp",
+ "/images/courseImg4.webp",
   
- "/src/assets/courseImg5.webp",
+ "/images/courseImg5.webp",
   
- "/src/assets/courseImg6.webp",
+ "/images/courseImg6.webp",
   
- "/src/assets/courseImg7.webp",
+ "/images/courseImg7.webp",
   
- "/src/assets/courseImg8.webp",
+ "/images/courseImg8.webp",
   
- "/src/assets/courseImg9.webp",
+ "/images/courseImg9.webp",
   
- "/src/assets/courseImg10.webp",
+ "/images/courseImg10.webp",
   
- "/src/assets/courseImg11.webp",
+ "/images/courseImg11.webp",
   
- "/src/assets/courseImg7.webp",
+ "/images/courseImg7.webp",
   
 ];
 
