@@ -1,5 +1,5 @@
 import {  useAnimation } from "framer-motion";
-import { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Play, ArrowRight, Code, ShieldCheck, Rocket, Award, Star, Users, Clock, BookOpen, Zap, ChevronRight, LucideAward, AwardIcon, Trophy, TrendingUp, FileText, Video, Target, BarChart2, Clock1, CheckCircle, ChevronLeft } from "lucide-react";
 
 import samsung_logo from "../../assets/samsung_logo.svg"
@@ -232,104 +232,119 @@ useEffect(() => {
     <ReviewSection/></Suspense>
 
 
+{/* 
+ Learning Focused on Your Goals Your Goals */}
+<Suspense fallback={<LoadingFallback/>}>
+<section className="py-16 px-4 bg-neutral-50 lg:min-h-[1230px]  ">
+  <div className="max-w-6xl mx-auto min-h-[1100px] ">
+    {/* Header Section - Added min-height to prevent shift during animation */}
+    <div className="text-center mb-16 min-h-[180px] md:min-h-[160px]">
+      <motionComponents.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "100px" }}
+        className="text-3xl md:text-4xl font-bold text-dark-800 mb-4"
+      >
+        Learning Focused on <span className="text-primary-600">Your Goals</span>
+      </motionComponents.h2>
+      <motionComponents.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "100px" }}
+        className="text-lg text-neutral-500 max-w-3xl mx-auto"
+      >
+        Our platform adapts to your learning style and career aspirations with personalized recommendations and progress tracking.
+      </motionComponents.p>
+    </div>
 
-
-
-    <section className="py-16 px-4 bg-neutral-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <motionComponents.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-dark-800 mb-4"
-          >
-            Learning Focused on <span className="text-primary-600">Your Goals</span>
-          </motionComponents.h2>
-          <motionComponents.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-lg text-neutral-500 max-w-3xl mx-auto"
-          >
-            Our platform adapts to your learning style and career aspirations with personalized recommendations and progress tracking.
-          </motionComponents.p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {goals.map((goal, index) => (
-            <motionComponents.div
-              key={goal.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-all"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-lg bg-primary-50">
-                  {goal.icon}
-                </div>
-                <h3 className="text-xl font-bold text-dark-800">{goal.title}</h3>
-              </div>
-              <p className="text-neutral-500 mb-6">{goal.description}</p>
-              <ul className="space-y-3">
-                {goal.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </motionComponents.div>
-          ))}
-        </div>
-
+    {/* Goals Grid - Added fixed height container */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 min-h-[500px] md:min-h-[400px]">
+      {goals.map((goal, index) => (
         <motionComponents.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 md:p-12 text-white"
+          key={goal.title}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true, margin: "50px" }}
+          whileHover={{ y: -5 }}
+          className="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-all h-full "
         >
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/2">
-                <BookOpen className="w-12 h-12 mb-6 text-white/80" />
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">Start learning with purpose today</h3>
-                <p className="text-white/90 mb-6">
-                  Join thousands of learners who've transformed their careers through our goal-driven approach to education.
-                </p>
-                <button aria-label='learning path' className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-neutral-100 transition-colors">
-                  Explore Learning Paths
-                </button>
-              </div>
-              <div className="md:w-1/2 grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <motionComponents.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                    viewport={{ once: true }}
-                    className="bg-white/10 p-4 rounded-lg backdrop-blur-sm"
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      {stat.icon}
-                      <span className="text-lg font-bold">{stat.value}</span>
-                    </div>
-                    <p className="text-sm text-white/80">{stat.label}</p>
-                  </motionComponents.div>
-                ))}
-              </div>
+          <div className="flex items-center gap-3 mb-4  h-[60px]">
+            <div className="p-3 rounded-lg bg-primary-50 w-12 h-12 flex items-center justify-center">
+              {React.cloneElement(goal.icon, {
+                width: 24,
+                height: 24,
+                className: "text-primary-500"
+              })}
             </div>
+            <h3 className="text-xl font-bold text-dark-800">{goal.title}</h3>
           </div>
+          <p className="text-neutral-500 mb-6 h-[100px]">{goal.description}</p>
+          <ul className="space-y-3 h-[150px]">
+            {goal.features.map((feature) => (
+              <li key={feature} className="flex items-start gap-2">
+                <CheckCircle width={20} height={20} className="text-primary-500 flex-shrink-0 mt-0.5" />
+                <span className="text-neutral-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
         </motionComponents.div>
+      ))}
+    </div>
+
+    {/* CTA Section - Improved with stable dimensions */}
+    <motionComponents.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "100px" }}
+      className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 md:p-12 text-white min-h-[400px] "
+    >
+      <div className="max-w-4xl mx-auto h-full">
+        <div className="flex flex-col md:flex-row items-center gap-8 h-full">
+          <div className="md:w-1/2">
+            <BookOpen width={48} height={48} className="w-12 h-12 mb-6 text-white/80" />
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Start learning with purpose today</h3>
+            <p className="text-white/90 mb-6">
+              Join thousands of learners who've transformed their careers through our goal-driven approach to education.
+            </p>
+            <button 
+              aria-label='learning path' 
+              className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-neutral-100 transition-colors"
+            >
+              Explore Learning Paths
+            </button>
+          </div>
+          <div className="md:w-1/2 grid grid-cols-2 gap-6 h-full">
+            {stats.map((stat, index) => (
+              <motionComponents.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                viewport={{ once: true, margin: "50px" }}
+                className="bg-white/10 p-4 rounded-lg backdrop-blur-sm h-full min-h-[120px]"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  {React.cloneElement(stat.icon, {
+                    width: 20,
+                    height: 20,
+                    className: "text-white"
+                  })}
+                  <span className="text-lg font-bold">{stat.value}</span>
+                </div>
+                <p className="text-sm text-white/80">{stat.label}</p>
+              </motionComponents.div>
+            ))}
+          </div>
+        </div>
       </div>
-    </section>
+    </motionComponents.div>
+  </div>
+</section>
+</Suspense>
 
 <Suspense fallback={LoadingFallback}><GetStartedSection/></Suspense>
 

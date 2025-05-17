@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* body{
     font-display: swap;
-}
+} */
 .box{
   @apply max-w-[1600px] mx-auto;
 }
