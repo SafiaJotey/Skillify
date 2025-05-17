@@ -19,7 +19,7 @@
       "price": "$435",
       "hasDiscount": true,
       "discountedPrice": "$124",
-       "image": "",
+       "image": "/src/assets/courseImg1.webp",
       "lessons": 68,
       "courseIncludes": [
         "28 hours on-demand video",
@@ -96,7 +96,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-       "image": "",
+       "image": "/src/assets/courseImg2.webp",
       "lessons": 185,
       "courseIncludes": [
         "22 hours on-demand video",
@@ -166,7 +166,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-       "image": "",
+  "image": "/src/assets/courseImg3.webp",
       "lessons": 320,
       "courseIncludes": [
         "69 hours on-demand video",
@@ -235,7 +235,7 @@
       "price": "$399",
       "hasDiscount": true,
       "discountedPrice": "$39.99",
-       "image": "",
+   "image": "/src/assets/courseImg4.webp",
       "lessons": 280,
       "courseIncludes": [
         "44 hours on-demand video",
@@ -303,7 +303,7 @@
       "price": "$249",
       "hasDiscount": true,
       "discountedPrice": "$24.99",
-       "image": "",
+    "image": "/src/assets/courseImg5.webp",
       "lessons": 150,
       "courseIncludes": [
         "28 hours on-demand video",
@@ -372,7 +372,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-       "image": "",
+   "image": "/src/assets/courseImg6.webp",
       "lessons": 180,
       "courseIncludes": [
         "23 hours on-demand video",
@@ -441,7 +441,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-       "image": "",
+    "image": "/src/assets/courseImg7.webp",
       "lessons": 220,
       "courseIncludes": [
         "52 hours on-demand video",
@@ -510,7 +510,7 @@
       "price": "$249",
       "hasDiscount": true,
       "discountedPrice": "$24.99",
-       "image": "",
+     "image": "/src/assets/courseImg8.webp",
       "lessons": 190,
       "courseIncludes": [
         "32 hours on-demand video",
@@ -579,7 +579,7 @@
       "price": "$299",
       "hasDiscount": true,
       "discountedPrice": "$29.99",
-       "image": "",
+    "image": "/src/assets/courseImg9.webp",
       "lessons": 210,
       "courseIncludes": [
         "37 hours on-demand video",
@@ -648,7 +648,7 @@
       "price": "$199",
       "hasDiscount": true,
       "discountedPrice": "$19.99",
-       "image": "",
+     "image": "/src/assets/courseImg10.webp",
       "lessons": 120,
       "courseIncludes": [
         "18 hours on-demand video",
@@ -717,7 +717,7 @@
         "price": "$380",
         "hasDiscount": false,
         "discountedPrice": "",
-        "image": "",
+      "image": "/src/assets/courseImg11.webp",
         "lessons": 55,
         "courseIncludes": [
           "10 hours on-demand video",
@@ -786,7 +786,7 @@
         "price": "$420",
         "hasDiscount": true,
         "discountedPrice": "$149",
-         "image": "",
+        "image": "/src/assets/courseImg1.webp",
         "lessons": 85,
         "courseIncludes": [
           "16 hours on-demand video",
@@ -854,7 +854,7 @@
         "price": "$360",
         "hasDiscount": true,
         "discountedPrice": "$110",
-         "image": "",
+      "image": "/src/assets/courseImg2.webp",
         "lessons": 42,
         "courseIncludes": [
           "9 hours on-demand video",
@@ -923,7 +923,7 @@
         "price": "$299",
         "hasDiscount": false,
         "discountedPrice": "",
-         "image": "",
+       "image": "/src/assets/courseImg3.webp",
         "lessons": 35,
         "courseIncludes": [
           "7 hours on-demand video",
@@ -992,7 +992,7 @@
         "price": "$399",
         "hasDiscount": true,
         "discountedPrice": "$140",
-         "image": "",
+      "image": "/src/assets/courseImg4.webp",
         "lessons": 50,
         "courseIncludes": [
           "12 hours on-demand video",

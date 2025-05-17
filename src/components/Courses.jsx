@@ -5,7 +5,29 @@ import { useNavigate } from 'react-router-dom';
 
 // Sample course images (you would replace these with actual image imports or URLs)
 const courseImages = [
-  '',
+ "/src/assets/courseImg1.webp",
+  
+ "/src/assets/courseImg2.webp",
+  
+ "/src/assets/courseImg3.webp",
+  
+ "/src/assets/courseImg4.webp",
+  
+ "/src/assets/courseImg5.webp",
+  
+ "/src/assets/courseImg6.webp",
+  
+ "/src/assets/courseImg7.webp",
+  
+ "/src/assets/courseImg8.webp",
+  
+ "/src/assets/courseImg9.webp",
+  
+ "/src/assets/courseImg10.webp",
+  
+ "/src/assets/courseImg11.webp",
+  
+ "/src/assets/courseImg7.webp",
   
 ];
 
@@ -24,7 +46,7 @@ export default function Courses() {
         lessons: 42,
         level: "Advanced",
         icon: <BookOpen className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[11]
       },
       {
         id: 2,
@@ -35,7 +57,7 @@ export default function Courses() {
         lessons: 35,
         level: "Beginner",
         icon: <FileText className="w-5 h-5 text-secondary-500" />,
-        image:courseImages[0]
+        image:courseImages[10]
       },
       {
         id: 3,
@@ -46,7 +68,7 @@ export default function Courses() {
         lessons: 58,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[9]
       },
       {
         id: 4,
@@ -57,7 +79,7 @@ export default function Courses() {
         lessons: 65,
         level: "Beginner",
         icon: <Camera className="w-5 h-5 text-purple-500" />,
-        image: courseImages[0]
+        image: courseImages[8]
       },
       {
         id: 5,
@@ -68,7 +90,7 @@ export default function Courses() {
         lessons: 72,
         level: "Intermediate",
         icon: <Database className="w-5 h-5 text-blue-500" />,
-        image: courseImages[0]
+        image: courseImages[7]
       },
       {
         id: 6,
@@ -79,7 +101,7 @@ export default function Courses() {
         lessons: 38,
         level: "Beginner",
         icon: <Music className="w-5 h-5 text-pink-500" />,
-        image: courseImages[0]
+        image: courseImages[6]
       },
       {
         id: 7,
@@ -90,7 +112,7 @@ export default function Courses() {
         lessons: 47,
         level: "Intermediate",
         icon: <Paintbrush className="w-5 h-5 text-orange-500" />,
-        image: courseImages[0]
+        image: courseImages[5]
       },
       {
         id: 8,
@@ -101,7 +123,7 @@ export default function Courses() {
         lessons: 28,
         level: "Intermediate",
         icon: <Globe className="w-5 h-5 text-green-500" />,
-        image:courseImages[0]
+        image:courseImages[4]
       },
       {
         id: 9,
@@ -112,7 +134,7 @@ export default function Courses() {
         lessons: 53,
         level: "Beginner",
         icon: <Paintbrush className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[0]
+        image: courseImages[3]
       },
       {
         id: 10,
@@ -123,7 +145,7 @@ export default function Courses() {
         lessons: 68,
         level: "Advanced",
         icon: <Cpu className="w-5 h-5 text-blue-500" />,
-        image: courseImages[0]
+        image: courseImages[2]
       },
       {
         id: 11,
@@ -134,7 +156,7 @@ export default function Courses() {
         lessons: 61,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image:courseImages[0]
+        image:courseImages[1]
       },
       {
         id: 12,
@@ -157,7 +179,7 @@ export default function Courses() {
         lessons: 42,
         level: "Advanced",
         icon: <BookOpen className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[10]
       },
       {
         id: 3,
@@ -167,7 +189,7 @@ export default function Courses() {
         lessons: 58,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[6]
       },
       {
         id: 7,
@@ -177,7 +199,7 @@ export default function Courses() {
         lessons: 47,
         level: "Intermediate",
         icon: <Paintbrush className="w-5 h-5 text-orange-500" />,
-        image: courseImages[0]
+        image: courseImages[5]
       },
       {
         id: 8,
@@ -187,7 +209,7 @@ export default function Courses() {
         lessons: 28,
         level: "Intermediate",
         icon: <Globe className="w-5 h-5 text-green-500" />,
-        image: courseImages[0]
+        image: courseImages[3]
       },
       {
         id: 11,
@@ -197,7 +219,7 @@ export default function Courses() {
         lessons: 61,
         level: "Intermediate",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[2]
       },
       {
         id: 12,
@@ -207,7 +229,7 @@ export default function Courses() {
         lessons: 52,
         level: "Advanced",
         icon: <Code className="w-5 h-5 text-primary-500" />,
-        image: courseImages[0]
+        image: courseImages[1]
       }
     ],
     design: [
@@ -229,7 +251,7 @@ export default function Courses() {
         lessons: 53,
         level: "Beginner",
         icon: <Paintbrush className="w-5 h-5 text-secondary-500" />,
-        image: courseImages[0]
+        image: courseImages[9]
       }
     ],
     photography: [
@@ -241,7 +263,7 @@ export default function Courses() {
         lessons: 65,
         level: "Beginner",
         icon: <Camera className="w-5 h-5 text-purple-500" />,
-        image:courseImages[0]
+        image:courseImages[8]
       }
     ],
     data: [
@@ -253,7 +275,7 @@ export default function Courses() {
         lessons: 72,
         level: "Intermediate",
         icon: <Database className="w-5 h-5 text-blue-500" />,
-        image:courseImages[0]
+        image:courseImages[7]
       },
      
       {
@@ -264,7 +286,7 @@ export default function Courses() {
         lessons: 68,
         level: "Advanced",
         icon: <Cpu className="w-5 h-5 text-blue-500" />,
-        image: courseImages[0]
+        image: courseImages[10]
       }
     ],
     music: [
@@ -276,7 +298,7 @@ export default function Courses() {
         lessons: 38,
         level: "Beginner",
         icon: <Music className="w-5 h-5 text-pink-500" />,
-        image:courseImages[0]
+        image:courseImages[3]
       }
     ]
   };
